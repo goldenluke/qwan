@@ -88,9 +88,7 @@ The system evolves according to:
 $$
 \frac{\partial x}{\partial t}
 $$
-$$
 =
-$$
 $$
 - L \frac{\delta \Phi}{\delta x}
 + F_{env}
