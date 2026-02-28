@@ -1,6 +1,8 @@
 # QWAN — Quality Without a Name  
 ## A Variational Bio-Physical Model of Meta-Stable Structural Organization
 
+Article: https://goldenluke.github.io/qwan/
+
 ---
 
 ## Overview
