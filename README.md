@@ -229,7 +229,7 @@ qwan_simulacao.gif
 
 # License
 
-MIT License (or specify your preferred license)
+None. Just copy and paste.
 
 ---
 
