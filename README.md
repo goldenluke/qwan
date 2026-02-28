@@ -5,9 +5,9 @@
 
 ## Overview
 
-This project formalizes **Christopher Alexander’s “Quality Without a Name” (QWAN)** as a **meta-stable regime in dissipative systems**.
+This project formalizes Christopher Alexander’s “Quality Without a Name” (QWAN) as a meta-stable regime in dissipative systems.
 
-We propose that structural “aliveness” can be modeled as the minimization of a variational functional that balances:
+We propose that structural “aliveness” can be modeled as the minimization of a functional that balances:
 
 - Free energy minimization  
 - Configurational freedom  
@@ -15,11 +15,11 @@ We propose that structural “aliveness” can be modeled as the minimization of
 - Environmental complexity absorption  
 - Persistence under dissipative flow  
 
-The framework integrates:
+The framework integrates ideas from:
 
 - Thermodynamics (Gibbs free energy)
 - Onsager’s irreversible processes
-- Information-theoretic structure
+- Information-theoretic structure (continuous proxies)
 - Variational field dynamics
 - Evolutionary persistence criteria
 
@@ -37,23 +37,14 @@ This repository contains:
 
 We define a structural functional:
 
-$$
-\Phi[x] =
-\int_\Omega
-\left[
-\gamma G(x)
-- \alpha H_s(x)
-+ \beta I_s(x)
-\right]
-d\mathbf{r}
-$$
+Φ[x] = ∫Ω [ γ G(x) − α H_s(x) + β I_s(x) ] d r
 
 Where:
 
-- $G(x)$ → Local free energy term
-- $H_s(x)$ → Structured configurational freedom
-- $I_s(x)$ → Structural coherence
-- $\alpha, \beta, \gamma > 0$ → Phenomenological scale-dependent parameters
+- G(x) → Local free energy term
+- H_s(x) → Structured configurational freedom
+- I_s(x) → Structural coherence
+- α, β, γ > 0 → Phenomenological scale-dependent parameters
 
 ---
 
@@ -61,23 +52,19 @@ Where:
 
 ### Free Energy
 
-$$
-G(x) = \frac{1}{2}(x - x_0)^2
-$$
+G(x) = 1/2 (x − x₀)²
 
 ### Structured Freedom (Entropy Proxy)
 
-$$
-H_s(x) = (x - \langle x \rangle_\sigma)^2
-$$
+H_s(x) = (x − ⟨x⟩_σ)²
 
-Where $\langle x \rangle_\sigma$ is a Gaussian-smoothed local mean.
+Where ⟨x⟩_σ is a Gaussian-smoothed local mean.
 
 ### Structural Coherence
 
-$$
-I_s(x) = |\nabla x|^2
-$$
+I_s(x) = |∇x|²
+
+These are continuous structural proxies, not exact Shannon entropies or mutual information.
 
 ---
 
@@ -85,35 +72,22 @@ $$
 
 The system evolves according to:
 
-$$
-\frac{\partial x}{\partial t}
-$$
-=
-$$
-- L \frac{\delta \Phi}{\delta x}
-+ F_{env}
-$$
+∂x/∂t = − L (δΦ/δx) + F_env
 
 Where:
 
-- $L$ is a positive-definite Onsager operator
-- $F_{env}$ represents environmental forcing
+- L is a positive-definite Onsager operator
+- F_env represents environmental forcing
 
 Expanded form:
 
-$$
-\frac{\partial x}{\partial t}
-=
-- L
-\left[
-\gamma(x-x_0)
-- \alpha \mathcal{D}_H(x)
-+ \beta(-2\nabla^2 x)
-\right]
-+ F_{env}
-$$
+∂x/∂t =
+− L [ γ(x − x₀)
+      − α D_H(x)
+      + β (−2 ∇²x) ]
++ F_env
 
-This defines a **dissipative variational field system**.
+This defines a dissipative variational field system.
 
 ---
 
@@ -121,19 +95,19 @@ This defines a **dissipative variational field system**.
 
 By varying parameters:
 
-- $\alpha \gg \beta$ → Chaotic / disordered regime$
-- $\beta \gg \alpha$ → Rigid / homogeneous regime$
-- Intermediate region → Meta-stable structured patterns$
+- α >> β → chaotic / disordered regime  
+- β >> α → rigid / homogeneous regime  
+- Intermediate region → meta-stable structured patterns  
 
 The intermediate regime exhibits:
 
-- Convergence of $\Phi$
-- Stabilized intermediate freedom
-- Stabilized intermediate coherence
-- Increasing environment correlation
-- Persistent structural organization
+- Convergence of Φ  
+- Stabilized intermediate freedom  
+- Stabilized intermediate coherence  
+- Increasing environment correlation  
+- Persistent structural organization  
 
-This region is identified as the **QWAN regime**.
+This region is identified as the QWAN regime.
 
 ---
 
@@ -141,19 +115,11 @@ This region is identified as the **QWAN regime**.
 
 A system is in QWAN state if:
 
-$$
-\boxed{
-\text{QWAN}(x^*)
-\iff
-\begin{cases}
-\frac{\delta \Phi}{\delta x} = 0 \\
-\frac{\delta^2 \Phi}{\delta x^2} > 0 \\
-H_s \text{ intermediate} \\
-I_s \text{ intermediate} \\
-\frac{dA}{dt} \ge 0
-\end{cases}
-}
-$$
+- δΦ/δx = 0  
+- δ²Φ/δx² > 0  
+- H_s is intermediate (not maximal)  
+- I_s is intermediate (not maximal)  
+- dA/dt ≥ 0 (increasing environment alignment)
 
 ---
 
@@ -167,7 +133,7 @@ The repository includes:
 - Environmental forcing field
 - GIF animation rendering
 - Observable tracking:
-  - Mean functional $\Phi$
+  - Mean functional Φ
   - Energy term
   - Freedom term
   - Coherence term
@@ -193,7 +159,7 @@ The repository includes:
 - A metaphysical claim about essence
 - A complete theory of biological meaning
 
-It is a **regime-level structural description**.
+It is a regime-level structural description.
 
 ---
 
@@ -231,7 +197,7 @@ qwan_simulacao.gif
 
 # License
 
-None. Just copy and paste.
+None. Just copy and use.
 
 ---
 
@@ -241,6 +207,6 @@ This project operationalizes an idea that has historically remained qualitative.
 
 It proposes that structural “aliveness” may be modeled as:
 
-> A variational minimum in a dissipative free-energy landscape balancing freedom and form.
+A variational minimum in a dissipative free-energy landscape balancing freedom and form.
 
-This repository represents the first computational implementation of that hypothesis.
+This repository represents a first computational implementation of that hypothesis.
