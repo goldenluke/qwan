@@ -233,13 +233,6 @@ MIT License (or specify your preferred license)
 
 ---
 
-# Author
-
-Lucas Dourado  
-Independent Research in Bio-Physical Systems, Structural Organization, and Complexity Theory
-
----
-
 # Final Note
 
 This project operationalizes an idea that has historically remained qualitative.
