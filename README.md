@@ -119,9 +119,9 @@ This defines a **dissipative variational field system**.
 
 By varying parameters:
 
-- $\alpha \gg \beta$ → Chaotic / disordered regime
-- $\beta \gg \alpha$ → Rigid / homogeneous regime
-- Intermediate region → Meta-stable structured patterns
+- $\alpha \gg \beta$ → Chaotic / disordered regime$
+- $\beta \gg \alpha$ → Rigid / homogeneous regime$
+- Intermediate region → Meta-stable structured patterns$
 
 The intermediate regime exhibits:
 
