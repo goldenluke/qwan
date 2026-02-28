@@ -209,4 +209,3 @@ It proposes that structural “aliveness” may be modeled as:
 
 A variational minimum in a dissipative free-energy landscape balancing freedom and form.
 
-This repository represents a first computational implementation of that hypothesis.
