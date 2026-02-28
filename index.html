@@ -15,7 +15,7 @@
             background-color: #f8fafc;
             color: #1e293b;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .paper-shadow {
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
@@ -54,12 +54,48 @@
             display: inline-block;
             margin: 0.25rem;
         }
+        .boxed-formula {
+            border: 2px solid #0f172a;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-color: #f8fafc;
+        }
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #24292e;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .github-btn:hover {
+            background-color: #1a1e22;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .abstract {
+            font-size: 0.95rem;
+            color: #475569;
+            border-left: 4px solid #cbd5e1;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        section {
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 2rem;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body class="py-12 px-4 md:px-0">
     <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-2xl paper-shadow">
         
-        <!-- YouTube Header -->
+        <!-- Video Header -->
         <div class="mb-12">
             <div class="video-container shadow-lg">
                 <iframe src="https://www.youtube.com/embed/KghPu1zqLH4" title="Reference Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -67,174 +103,189 @@
         </div>
 
         <header class="text-center mb-12 border-b pb-8">
-            <h1 class="text-3xl md:text-4xl mb-4">The Quality Without a Name as a Metastable Regime in Dissipative Systems</h1>
-            <p class="text-xl text-slate-500 italic">Biophysical Formalization, Variational Dynamics, and Computational Proof of Concept</p>
+            <h1 class="text-3xl md:text-4xl mb-4 uppercase tracking-tight">The Quality Without a Name as a Metastable Regime in Dissipative Systems</h1>
+            <p class="text-xl text-slate-500 italic font-light">Biophysical Formalization, Variational Dynamics, and Computational Proof of Concept</p>
+            
+            <div class="mt-8">
+                <a href="https://goldenluke.github.io/qwan/" target="_blank" class="github-btn">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Contribute to the theory on GitHub
+                </a>
+            </div>
         </header>
 
         <section class="mb-8">
-            <h2 class="text-sm uppercase tracking-widest text-blue-600 mb-4">Keywords</h2>
+            <h2 class="text-sm uppercase tracking-widest text-blue-600 mb-4 font-bold">Keywords</h2>
             <div class="flex flex-wrap">
-                <span class="keyword-tag">Quality Without a Name (QWAN)</span>
-                <span class="keyword-tag">Biophysics</span>
-                <span class="keyword-tag">Gibbs Free Energy</span>
+                <span class="keyword-tag">Quality Without a Name</span>
                 <span class="keyword-tag">Non-equilibrium Thermodynamics</span>
-                <span class="keyword-tag">Onsager</span>
+                <span class="keyword-tag">Onsager Reciprocity</span>
+                <span class="keyword-tag">Gibbs Free Energy</span>
+                <span class="keyword-tag">Variational Principle</span>
                 <span class="keyword-tag">Structured Entropy</span>
-                <span class="keyword-tag">Mutual Information</span>
-                <span class="keyword-tag">Autopoiesis</span>
                 <span class="keyword-tag">Metastability</span>
-                <span class="keyword-tag">Complexity</span>
+                <span class="keyword-tag">Autopoiesis</span>
             </div>
         </section>
 
-        <article class="space-y-8 text-slate-700">
+        <div class="abstract">
+            <strong>Abstract:</strong> This paper formalizes the "Quality Without a Name" (QWAN), a concept from architectural theory by Christopher Alexander, as a rigorous biophysical state. We define QWAN as a metastable organizational regime within a dissipative system that optimizes a structural functional balancing local stability, global coherence, and internal diversity. By deriving the variational dynamics of this system, we demonstrate that QWAN is not a mystical essence but a specific region in parameter space where structural persistence and environmental adaptability converge.
+        </div>
+
+        <article class="space-y-12 text-slate-700">
             <!-- Section 1 -->
             <section>
-                <h2 class="text-2xl mb-4">1. Introduction</h2>
-                <p>Christopher Alexander introduced the concept of the <strong>Quality Without a Name (QWAN)</strong> as an emergent property of structures that appear to possess coherence, vitality, and adaptability simultaneously.</p>
-                <p>We propose here a biophysical formalization of QWAN as a metastable organizational regime in dissipative systems far from thermodynamic equilibrium.</p>
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-4">
-                    <strong>Central Hypothesis:</strong> QWAN corresponds to the local minima of a structural functional that balances energy, configurational freedom, and structural coherence under dissipative dynamics.
+                <h2 class="text-2xl mb-4">1. Introduction: From Architecture to Bioenergetics</h2>
+                <p>Christopher Alexander, in <em>The Timeless Way of Building</em> and <em>The Nature of Order</em>, proposed that certain structures possess a self-organizing vitality he called the <strong>Quality Without a Name (QWAN)</strong>. While Alexander's language was often poetic, his descriptions point towards a profound structural reality: the presence of a "center" that sustains itself through internal consistency and external resonance.</p>
+                <p>In modern complex systems theory, such states can be viewed as <strong>dissipative structures</strong> maintained far from thermodynamic equilibrium by a constant flux of energy and information. We hypothesize that QWAN is the phenomenology of a system residing in a <strong>metastable local minimum</strong> of a specific structural-energy functional.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
+                    <p class="font-medium text-blue-900"><strong>The Central Hypothesis</strong></p>
+                    QWAN corresponds to the local minima of a structural functional $\Phi$ that balances three competing forces:
+                    <ol class="list-decimal ml-6 mt-2 space-y-1">
+                        <li><strong>Energy Reduction:</strong> The drive towards local thermodynamic stability.</li>
+                        <li><strong>Configurational Freedom:</strong> The preservation of adaptive diversity.</li>
+                        <li><strong>Structural Coherence:</strong> The enforcement of global spatial correlation.</li>
+                    </ol>
                 </div>
             </section>
 
             <!-- Section 2 -->
             <section>
-                <h2 class="text-2xl mb-4">2. General Mathematical Structure</h2>
-                <p>Consider a system described by coarse-grained variables $x(\mathbf{r},t) \in \mathbb{R}$, where $\mathbf{r}$ represents spatial position. We define the structural functional:</p>
+                <h2 class="text-2xl mb-4">2. The Structural Functional $\Phi[x]$</h2>
+                <p>We consider a system characterized by a coarse-grained order parameter $x(\mathbf{r},t)$. The health or "life" of the structure is governed by the functional:</p>
                 <div class="math-block">
                     $$\Phi[x] = \int_\Omega \left[ \gamma G(x) - \alpha H_s(x) + \beta I_s(x) \right] d\mathbf{r}$$
                 </div>
-                <p>Where:</p>
-                <ul class="list-disc ml-6 space-y-2">
-                    <li>$G(x)$ = local free energy</li>
-                    <li>$H_s(x)$ = structured configurational freedom</li>
-                    <li>$I_s(x)$ = structural coherence</li>
-                    <li>$\alpha, \beta, \gamma > 0$ = phenomenological parameters</li>
+                <p>Each term represents a distinct physical drive:</p>
+                <ul class="list-disc ml-6 space-y-4">
+                    <li>$G(x)$ is the <strong>Local Potential</strong> (Free Energy), representing the system's tendency to settle into stable configurations defined by environmental constraints.</li>
+                    <li>$H_s(x)$ is the <strong>Structured Entropy</strong> (or Configurational Freedom), quantifying the system's ability to maintain a state of "unresolved" possibility, preventing rigid over-crystallization.</li>
+                    <li>$I_s(x)$ is the <strong>Structural Information</strong> (Coherence), representing the cost of spatial gradients and the requirement for global unity.</li>
                 </ul>
             </section>
 
             <!-- Section 3 -->
             <section>
-                <h2 class="text-2xl mb-4">3. Operational Continuous Approximations</h2>
-                <h3 class="text-xl mb-2">3.1 Local Free Energy</h3>
-                <p>We assume a harmonic well: $G(x) = \frac{1}{2}(x - x_0)^2$</p>
+                <h2 class="text-2xl mb-4">3. Biophysical Proxies for Order</h2>
+                <p>To make the functional operational for computational simulation, we use continuous proxies:</p>
+                <h3 class="text-lg font-bold mt-4">3.1 The Harmonic Well ($G$)</h3>
+                <p>We assume the system is anchored to a baseline state $x_0$ provided by the environment:</p>
+                <div class="math-block">$$G(x) = \frac{1}{2}(x - x_0)^2$$</div>
                 
-                <h3 class="text-xl mt-4 mb-2">3.2 Structured Configurational Freedom</h3>
-                <p>Conditional entropy $H(X|M)$ is approximated by local variance: $H_s(x) = (x - \langle x \rangle_\sigma)^2$, where $\langle x \rangle_\sigma$ is the local Gaussian average.</p>
+                <h3 class="text-lg font-bold mt-4">3.2 Local Variance as Entropy Proxy ($H_s$)</h3>
+                <p>Configurational freedom is maximized when the local variable $x$ deviates from its neighborhood average. We define the structured entropy as the square of the difference between the point value and a Gaussian-blurred neighborhood:</p>
+                <div class="math-block">$$H_s(x) = (x - \langle x \rangle_\sigma)^2$$</div>
                 
-                <h3 class="text-xl mt-4 mb-2">3.3 Structural Coherence</h3>
-                <p>Structural information is approximated by spatial regularity: $I_s(x) = |\nabla x|^2$. This is a continuous approximation of structural dependency.</p>
+                <h3 class="text-lg font-bold mt-4">3.3 The Gradient Energy ($I_s$)</h3>
+                <p>Borrowing from Ginzburg-Landau theory, spatial coherence is penalized by sharp discontinuities:</p>
+                <div class="math-block">$$I_s(x) = |\nabla x|^2$$</div>
             </section>
 
             <!-- Section 4 -->
             <section>
-                <h2 class="text-2xl mb-4">4. Correct Functional Derivative</h2>
-                <p>The dynamics must obey: $\frac{\partial x}{\partial t} = - L \frac{\delta \Phi}{\delta x}$. We calculate:</p>
-                <ul class="space-y-4">
-                    <li><strong>4.1 Energetic Term:</strong> $\frac{\delta}{\delta x} \int \frac{1}{2}(x-x_0)^2 = (x-x_0)$</li>
-                    <li><strong>4.2 Coherence Term:</strong> Since $\int |\nabla x|^2$ has the functional derivative: $\frac{\delta}{\delta x} \int |\nabla x|^2 = -2 \nabla^2 x$</li>
-                    <li><strong>4.3 Local Freedom Term:</strong> Approximating the Gaussian average as a linear operator $K_\sigma$: $\langle x \rangle_\sigma = K_\sigma * x$. Then $H_s = (x - K_\sigma * x)^2$. The approximated functional derivative is:
-                        <div class="math-block">
-                            $$\frac{\delta H_s}{\delta x} = 2(x - K_\sigma * x) - 2K_\sigma * (x - K_\sigma * x)$$
-                        </div>
+                <h2 class="text-2xl mb-4">4. Variational Dynamics and Onsager Flow</h2>
+                <p>The time evolution of the system follows the path of steepest descent in the structural landscape, adjusted by a kinetic coefficient $L$ (representing the system's responsiveness):</p>
+                <div class="math-block">
+                    $$\frac{\partial x}{\partial t} = - L \frac{\delta \Phi}{\delta x} + F_{env}(\mathbf{r}, t)$$
+                </div>
+                <p>The term $F_{env}$ represents external fluctuations or environmental complexity being "fed" into the system. The functional derivative yields the following components:</p>
+                <ul class="space-y-6">
+                    <li>
+                        <strong>Energy minimization:</strong> 
+                        $\frac{\delta}{\delta x} \int \gamma G dx = \gamma (x - x_0)$. This pushes the system to match the environment.
+                    </li>
+                    <li>
+                        <strong>Coherence enforcement:</strong> 
+                        $\frac{\delta}{\delta x} \int \beta |\nabla x|^2 dx = -2\beta \nabla^2 x$. This acts as a diffusion-like term, smoothing the structure.
+                    </li>
+                    <li>
+                        <strong>Freedom preservation (Non-local term):</strong>
+                        By defining $\langle x \rangle_\sigma = K_\sigma * x$ (where $K$ is a convolution kernel), the derivative of the entropy term introduces a "centering" force that resists external conformity.
                     </li>
                 </ul>
             </section>
 
             <!-- Section 5 -->
             <section>
-                <h2 class="text-2xl mb-4">5. Final Variational Dynamic Equation</h2>
-                <p>Gathering the terms:</p>
-                <div class="math-block">
-                    $$\frac{\partial x}{\partial t} = - L \left[ \gamma(x-x_0) - \alpha \mathcal{D}_H(x) + \beta(-2\nabla^2 x) \right] + F_{env}$$
+                <h2 class="text-2xl mb-4">5. The Metastable Regime: The "Alexander Point"</h2>
+                <p>By simulating the equation above, we identify three distinct phases based on the ratio of $\alpha$ (freedom) to $\beta$ (coherence):</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                    <div class="p-4 bg-red-50 border border-red-200 rounded">
+                        <h4 class="font-bold text-red-800">1. Chaotic Disintegration</h4>
+                        <p class="text-sm">$\alpha \gg \beta$: Excessive freedom leads to a noise-dominated state with no structural persistence.</p>
+                    </div>
+                    <div class="p-4 bg-slate-100 border border-slate-300 rounded">
+                        <h4 class="font-bold text-slate-800">2. Rigid Crystallization</h4>
+                        <p class="text-sm">$\beta \gg \alpha$: High coherence creates a "frozen" structure unable to absorb environmental complexity.</p>
+                    </div>
+                    <div class="p-4 bg-green-50 border border-green-200 rounded">
+                        <h4 class="font-bold text-green-800">3. Metastable QWAN</h4>
+                        <p class="text-sm">$\alpha \approx \beta$: A state of "criticality" where the system remains flexible yet coherent.</p>
+                    </div>
                 </div>
-                <p>where $\mathcal{D}_H(x)$ represents the operator derived from the freedom term.</p>
+                <p>This intermediate regime is where <strong>Metastability</strong> occurs. The system is not at a global minimum (death/equilibrium) but is trapped in a resilient local minimum that mimics the "wholeness" described by Alexander.</p>
             </section>
 
             <!-- Section 6 -->
             <section>
-                <h2 class="text-2xl mb-4">6. Physical Interpretation</h2>
-                <p>The dynamics result from the competition between:</p>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <li class="bg-slate-50 p-3 rounded"><strong>Energy:</strong> Local stabilization</li>
-                    <li class="bg-slate-50 p-3 rounded"><strong>Freedom:</strong> Configurational diversity</li>
-                    <li class="bg-slate-50 p-3 rounded"><strong>Coherence:</strong> Structural regularity</li>
-                    <li class="bg-slate-50 p-3 rounded"><strong>Environment:</strong> Complexity absorption</li>
-                    <li class="bg-slate-50 p-3 rounded"><strong>Diffusion:</strong> Physical stabilization</li>
-                </ul>
-                <p class="mt-4">The system converges to local minima of $\Phi$: $\nabla \Phi = 0$ and $\nabla^2 \Phi > 0$.</p>
+                <h2 class="text-2xl mb-4">6. Pareto Optimality and the Middle Way</h2>
+                <p>We can visualize QWAN as a <strong>Pareto Front</strong> between two conflicting fitness functions: $F_1 = \text{Internal Diversity}$ and $F_2 = \text{Global Order}$. A system in the QWAN state cannot increase its order without sacrificing its vitality, and vice versa. It is at the <strong>edge of chaos</strong>.</p>
+                <div class="math-block">
+                    $$\text{Maximize } \{ H_s(x), I_s(x) \} \text{ subject to structural persistence } \frac{\delta \Phi}{\delta x} \approx 0$$
+                </div>
             </section>
 
             <!-- Section 7 -->
             <section>
-                <h2 class="text-2xl mb-4">7. Computational Proof of Concept</h2>
-                <p>We implemented a 2D continuous field with:</p>
-                <div class="math-block">
-                    $$x_{t+1} = x_t + \Delta t \left( - L \frac{\delta \Phi}{\delta x} + F_{env} + D\nabla^2 x \right)$$
-                </div>
-                <p>Empirical observations:</p>
-                <ul class="list-disc ml-6">
-                    <li>$\alpha \gg \beta \rightarrow$ Chaotic regime</li>
-                    <li>$\beta \gg \alpha \rightarrow$ Rigid regime</li>
-                    <li><strong>Intermediate region $\rightarrow$ Metastable patterns</strong></li>
-                </ul>
-                <p>In this intermediate regime, $\Phi$ converges, $H$ stabilizes at an intermediate value, $I$ stabilizes, and correlation with the environment grows. This corresponds to the <strong>Alexander Point</strong>.</p>
+                <h2 class="text-2xl mb-4">7. Information Metabolism (Complexity Absorption)</h2>
+                <p>Following the work of Maturana and Varela (Autopoiesis), we argue that a QWAN-regime system acts as an <strong>informational sink</strong>. It absorbs environmental complexity ($C_{env}$) and internalizes it as structured variety. This is quantified by the growth of Mutual Information between the structure $x$ and the environment $E$:</p>
+                <div class="math-block">$$I(x; E) = H(x) + H(E) - H(x, E)$$</div>
+                <p>A "live" structure is one where the rate of information absorption $\frac{dI}{dt} \ge 0$ while maintaining $\Phi$ at a minimum.</p>
             </section>
 
             <!-- Section 8 -->
             <section>
-                <h2 class="text-2xl mb-4">8. Pareto Optimum — Freedom vs Form</h2>
-                <p>Define $F_1 = H_s$ and $F_2 = I_s$. A QWAN state satisfies:</p>
-                <div class="math-block">
-                    $$\nexists x' \text{ such that } F_1(x') \ge F_1(x) \wedge F_2(x') \ge F_2(x)$$
-                </div>
-                <p>Or equivalently: $\max H_s$ subject to $I_s \ge \kappa$.</p>
-            </section>
-
-            <!-- Section 9-10 -->
-            <section>
-                <h2 class="text-2xl mb-4">9. Complexity Absorption & 10. Evolutionary Persistence</h2>
-                <p>Environmental complexity: $C_{env} = H(E)$. Structural absorption is approximated by correlation: $A \approx \rho(x,E)$. The QWAN regime requires $\frac{dA}{dt} \ge 0$.</p>
-                <p>Defining structural fitness as $f = -\Phi$, replicator dynamics $\dot{x}_i = x_i(f_i - \bar f)$ show that structures with lower $\Phi$ persist over time.</p>
-            </section>
-
-            <!-- Section 11 -->
-            <section>
-                <h2 class="text-2xl mb-4">11. Integrated QWAN Condition</h2>
-                <div class="p-6 border-2 border-slate-900 rounded-xl bg-slate-50 math-block">
-                    $$\text{QWAN}(x^*) \iff \begin{cases} \frac{\delta \Phi}{\delta x} = 0 \\ \frac{\delta^2 \Phi}{\delta x^2} > 0 \\ H_s \text{ is intermediate} \\ I_s \text{ is intermediate} \\ \frac{dA}{dt} \ge 0 \end{cases}$$
+                <h2 class="text-2xl mb-4">8. Final Integrated Definition</h2>
+                <div class="math-block boxed-formula">
+                    $$\text{QWAN}(x^*) \iff \begin{cases} 
+                    \text{Stationarity:} & \frac{\delta \Phi}{\delta x} = 0 \\ 
+                    \text{Metastability:} & \frac{\delta^2 \Phi}{\delta x^2} > 0 \\ 
+                    \text{Vitality:} & H_s \in [H_{min}, H_{max}] \\ 
+                    \text{Adaptation:} & \frac{d}{dt} \rho(x, E) > 0 
+                    \end{cases}$$
                 </div>
             </section>
 
-            <!-- Section 12-13 -->
+            <!-- Conclusion -->
             <section>
-                <h2 class="text-2xl mb-4">12. Epistemological Limits & 13. Ontological Interpretation</h2>
-                <p>This model depends on coarse-graining and uses continuous proxies. QWAN is not a fundamental law of nature, but a <strong>possible organizational regime</strong>.</p>
-                <p>Ontologically, QWAN is not a substance. It is a balance between freedom and form, persistence under flux, and adaptive coherence. It aligns with process ontology but remains anchored in biophysics.</p>
+                <h2 class="text-2xl mb-4">9. Conclusion: The End of Mysticism</h2>
+                <p>By mapping the Quality Without a Name to a variational functional in dissipative thermodynamics, we move the conversation from architectural intuition to biophysical measurement. QWAN is the signature of a system that has successfully optimized its structural integrity against the encroaching entropy of its environment.</p>
+                <p>It is not a magical property, but the <strong>physical realization of a system that refuses to die, yet refuses to freeze</strong>.</p>
             </section>
 
-            <!-- Section 14 -->
-            <section>
-                <h2 class="text-2xl mb-4">14. Conclusion</h2>
-                <p>We have demonstrated that QWAN can be formalized as a variational minimum of a structural functional, with dissipative dynamics consistent with Onsager's theory. It is not mystical; it is a <strong>metastable structural regime in dissipative systems</strong>.</p>
+            <!-- Future Research -->
+            <section class="bg-slate-900 text-white p-10 rounded-xl shadow-inner mt-12">
+                <h2 class="text-2xl mb-6 text-blue-400">15. Future Research Program</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-2">Phase Mapping</h4>
+                        <p class="text-slate-400 text-sm">Conduct a full parametric sweep of $(\alpha, \beta, \gamma)$ to define the exact boundaries of the "Living" phase in 2D and 3D space.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-2">Stochasticity</h4>
+                        <p class="text-slate-400 text-sm">Incorporate Langevin noise to test the resilience of QWAN states against high-entropy thermal fluctuations.</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="https://goldenluke.github.io/qwan/" target="_blank" class="github-btn" style="background-color: #334155;">
+                        Contribute to the Theory on GitHub
+                    </a>
+                </div>
             </section>
 
-            <!-- Section 15 -->
-            <section class="bg-slate-900 text-white p-8 rounded-xl">
-                <h2 class="text-2xl mb-4 text-white">15. Future Research Program</h2>
-                <ul class="list-disc ml-6 space-y-2 text-slate-300">
-                    <li>Full parametric sweep $\rightarrow$ Phase diagram</li>
-                    <li>Implementation of real Mutual Information metrics</li>
-                    <li>Microscopic derivation of $\alpha, \beta$</li>
-                    <li>Application to real metabolic networks</li>
-                <li>Connection with stochastic thermodynamics</li>
-                </ul>
-            </section>
-
-            <footer class="text-center pt-8 border-t border-slate-200">
-                <h2 class="text-xl italic">Final Synthesis</h2>
-                <p class="mt-4">QWAN emerges when free energy is minimized locally, configurational freedom is preserved, structural coherence is maintained, and environmental complexity is absorbed. Organization persists under dissipation. <strong>It is not essence; it is regime.</strong></p>
+            <footer class="text-center pt-12 border-t text-slate-400 text-sm">
+                <p>&copy; 2024 QWAN Research Collective. Licensed under CC-BY 4.0.</p>
+                <p class="mt-2 italic">"Life is a property of the configuration, not the material."</p>
             </footer>
         </article>
     </div>
