@@ -153,7 +153,7 @@ The repository includes:
 
 ---
 
-# What This Project Is Not
+# What This Project IS NOT
 
 - A fundamental law of nature
 - A symmetry-derived principle
@@ -161,7 +161,7 @@ The repository includes:
 - A metaphysical claim about essence
 - A complete theory of biological meaning
 
-It is a regime-level structural description.
+It is a regime-level structural DESCRIPTION.
 
 ---
 
