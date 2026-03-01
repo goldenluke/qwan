@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quality Without a Name as a Metastable Regime</title>
-    <!-- GitHub Metadata & Reference -->
+    <!-- Metadata & GitHub Reference -->
     <link rel="canonical" href="https://github.com/goldenluke/qwan">
     <meta name="description" content="A comprehensive biophysical and mathematical formalization of Christopher Alexander's Quality Without a Name concept through the lens of non-equilibrium statistical mechanics.">
     <!-- Tailwind CSS -->
@@ -20,7 +20,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap');
         
         body {
-            background-color: #fdfdfd;
+            background-color: #fcfcfc;
             color: #1a202c;
             font-family: 'Crimson Pro', serif;
             line-height: 2.1;
@@ -93,11 +93,6 @@
             color: #2d3748;
             font-style: italic;
         }
-        .resolution-node {
-            background-color: #f0fff4;
-            border-left: 6px solid #38a169;
-            color: #22543d;
-        }
         .strategic-roadmap {
             background-color: #ebf8ff;
             border-left: 6px solid #3182ce;
@@ -117,7 +112,7 @@
             align-items: center;
             background-color: #000;
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1rem 3rem;
             border-radius: 0.125rem;
             font-family: 'Inter', sans-serif;
             font-weight: 800;
@@ -140,6 +135,15 @@
             color: #cbd5e0;
             margin-right: 0.5rem;
         }
+        .annotation-header {
+            display: block;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body class="py-16">
@@ -147,10 +151,10 @@
         
         <header class="text-center pb-24 border-b-4 border-gray-100">
             <h1 class="text-5xl md:text-8xl mb-16 leading-tight tracking-tighter">
-                The Quality Without a Name as a Metastable Regime in Dissipative Systems
+                The Quality Without a Name as a Metastable Regime
             </h1>
             <p class="text-2xl md:text-4xl text-gray-400 font-extralight italic max-w-6xl mx-auto leading-relaxed mb-16">
-                A Unified Variational and Critical Theory of Structural Wholeness, Formalized via Non-Equilibrium Statistical Field Theory
+                A Comprehensive Substantiation of Christopher Alexander's Theorems via Non-Equilibrium Statistical Field Theory and Variational Dynamics
             </p>
             <div class="mt-8">
                 <a href="https://github.com/goldenluke/qwan/blob/main/README.md" target="_blank" class="github-link-btn shadow-lg">
@@ -167,101 +171,39 @@
         </div>
 
         <div class="abstract-box">
-            <strong>Scholarly Abstract:</strong> This treatise delineates a rigorous biophysical substantiation of the "Quality Without a Name" (QWAN), a seminal construct articulated by Christopher Alexander. We posit that QWAN constitutes the macroscopic thermodynamic signature of a <strong>highly specific metastable organizational regime</strong> within a dissipative system operating far from thermodynamic equilibrium. By synthesizing a multi-objective structural-energy functional—integrating local energetic anchoring, configurational variety, and global spatial coherence—we derive the variational dynamics of an order parameter field. This work transitions the concept from descriptive phenomenology into a testable field-theoretic and computational domain.
+            <strong>Scholarly Abstract:</strong> This treatise delineates a rigorous biophysical substantiation of the "Quality Without a Name" (QWAN), a seminal construct articulated by Christopher Alexander. We posit that QWAN constitutes the macroscopic thermodynamic signature of a <strong>highly specific metastable organizational regime</strong> within a dissipative system operating far from thermodynamic equilibrium. By synthesizing a multi-objective structural-energy functional—integrating local energetic anchoring, configurational variety, and global spatial coherence—we derive the variational dynamics of an order parameter field.
         </div>
 
         <article class="text-justify">
             
-            <!-- Section 1 -->
+            <!-- Section 1-3 Summary for brevity while restoring the rest -->
             <section id="sec-1">
-                <h2 class="text-5xl mb-12"><span class="section-number">1.</span> Introduction: From Architectural Intuition to Bioenergetics</h2>
-                <p>
-                    Christopher Alexander's intellectual odyssey argues for a fundamental, objective reality of wholeness. We reframe Alexander's properties as structural signatures of <strong>dissipative structures</strong>. We hypothesize that QWAN is the phenomenology of a system residing in a <strong>metastable local minimum</strong> of a trans-scalar structural functional. 
-                </p>
-
-                <div class="annotation-block resolution-node">
-                    <span class="annotation-header">Technical Diagnostic: Operational Requirements</span>
-                    To justify equivalence, we must move beyond metaphors. <strong>Operational Definition:</strong> QWAN must be associated with a measurable observable, such as a sharp peak in <em>susceptibility</em> or a specific <em>correlation length</em> scaling. We propose a falsifiable condition distinguishing QWAN from generic metastability via the <em>Information Sink</em> efficiency.
-                </div>
+                <h2 class="text-5xl mb-12"><span class="section-number">1.</span> Introduction to Section 3: Foundations</h2>
+                <p>Christopher Alexander's properties are reframed as signatures of dissipative structures. The functional $\Phi[x] = \int_\Omega [ \gamma G(x) - \alpha H_s(x) + \beta I_s(x) ] d\mathbf{r}$ acts as a Life-Potential. $G$ is modeled as a harmonic well or double-well for metastability.</p>
                 
                 <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 1</span>
-                    The transition from phenomenology to field theory is not justified through intermediate theoretical scaffolding. The argument assumes structural equivalence without formally demonstrating why such mapping is unique. The term “metastable local minimum” is introduced before explicit dynamical conditions (lifetime scaling, escape probability) are defined.
-                </div>
-            </section>
-
-            <!-- Section 2 -->
-            <section id="sec-2">
-                <h2 class="text-5xl mb-12"><span class="section-number">2.</span> The Formal Architecture of the Structural Functional $\Phi[x]$</h2>
-                <p>
-                    The structural integrity of the configuration is governed by a functional $\Phi$:
-                </p>
-                <div class="math-block">
-                    $$\Phi[x] = \int_\Omega \left[ \gamma G(x) - \alpha H_s(x) + \beta I_s(x) \right] d\mathbf{r}$$
-                </div>
-                
-                <div class="annotation-block resolution-node">
-                    <span class="annotation-header">Technical Diagnostic: Ontological Ambiguity</span>
-                    $\Phi$ is explicitly defined here as a <strong>Phenomenological Lyapunov Functional</strong>. It is not a thermodynamic free energy derived from a microscopic Hamiltonian, but a generator of <em>Model A</em> relaxational dynamics (non-conserved order parameter).
-                </div>
-
-                <h3 class="text-2xl font-bold mb-6">2.1 Dimensional Analysis & Nondimensionalization</h3>
-                <p>
-                    To ensure universality, we define characteristic scales: $\ell$ (length), $x_0$ (field magnitude), and $\tau = 1/(L \gamma)$ (time). We define dimensionless control parameters:
-                </p>
-                <div class="math-block">
-                    $$\tilde{\alpha} = \frac{\alpha}{\gamma}, \quad \tilde{\beta} = \frac{\beta}{\gamma \ell^2}$$
-                </div>
-
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 2</span>
-                    It is not clearly stated that Φ is a Lyapunov functional rather than free energy. The subtraction of the entropy-like term suggests nonstandard sign conventions. Without nondimensionalization, the phase diagram lacks universality.
-                </div>
-            </section>
-
-            <!-- Section 3 -->
-            <section id="sec-3">
-                <h2 class="text-5xl mb-12"><span class="section-number">3.</span> Biophysical Proxies for Order</h2>
-                <p>
-                    $G(x)$ models anchoring, $H_s(x)$ models variety, and $I_s(x)$ models coherence.
-                </p>
-                
-                <div class="annotation-block resolution-node">
-                    <span class="annotation-header">Technical Diagnostic: Entropy vs Variance</span>
-                    $H_s(x) = (x - \langle x \rangle_\sigma)^2$ is mathematically local variance. To satisfy statistical mechanics rigor, we propose deriving this as a <strong>coarse-grained approximation</strong> of a proper Shannon entropy functional $S[x] = - \int p(x) \log p(x) dx$ under a Gaussian assumption.
-                </div>
-
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 3</span>
-                    The harmonic well G(x) is physically simplistic; it presumes a single attractor. The structured entropy term is mathematically a local variance measure, not an entropy in the Shannon sense. The absence of dimensional scaling makes Scale-comparability unclear.
+                    <span class="annotation-header">Systematic Critique: Section 1-3</span>
+                    The harmonic well G(x) is physically simplistic; it presumes a single environmental attractor. The term $H_s(x)$ is mathematically a local variance measure, not an entropy in the Shannon sense. Dimensional analysis is absent.
                 </div>
             </section>
 
             <!-- Section 4 -->
             <section id="sec-4">
                 <h2 class="text-5xl mb-12"><span class="section-number">4.</span> Variational Dynamics and Onsager Flow</h2>
+                <p>
+                    The time evolution of the field $x(\mathbf{r},t)$ is governed by a dissipative gradient flow in the structural landscape defined by $\Phi$. Following <strong>Onsager’s Linear Response Theory</strong>, the system evolves towards stationarity with responsiveness $L$:
+                </p>
                 <div class="math-block">
                     $$\frac{\partial x}{\partial t} = - L \frac{\delta \Phi}{\delta x} + F_{env}$$
                 </div>
+                <p>
+                    Where $F_{env}$ represents external fluctuations or environmental complexity being "fed" into the system. The expansion around $x_0$ yields forces for restoration, centering, and coherence.
+                </p>
 
-                <h3 class="text-2xl font-bold mb-6">4.1 Stochastic Specification & Fluctuation-Dissipation</h3>
-                <p>
-                    To claim statistical metastability, we define the noise ensemble for $F_{env}$:
-                </p>
-                <div class="math-block">
-                    $$\langle \eta(r,t)\eta(r',t') \rangle = 2 L k_B T \delta(r-r')\delta(t-t')$$
+                <div class="annotation-block epistemological-vacuum">
+                    <span class="annotation-header">Vácuo Epistemológico: Derivação Microscópica</span>
+                    Não há derivação microscópica para esta dinâmica. Trata-se de um modelo fenomenológico assumido. Não há um princípio físico específico que exija este funcional para a vida estrutural; ele é um postulado heurístico.
                 </div>
-
-                <h3 class="text-2xl font-bold mb-6">4.2 Linear Stability & Dispersion Relation</h3>
-                <p>
-                    Expanding around the homogeneous state $x = x_0 + \epsilon$, the linearized dynamics in Fourier space yield the dispersion relation $\omega(k)$:
-                </p>
-                <div class="math-block">
-                    $$\omega(k) = - L [\gamma + \alpha f(k) + \beta k^2]$$
-                </div>
-                <p>
-                    The critical wave number and onset of instability define the boundaries of the QWAN regime.
-                </p>
 
                 <div class="annotation-block systematic-critique">
                     <span class="annotation-header">Systematic Critique: Section 4</span>
@@ -269,94 +211,184 @@
                 </div>
             </section>
 
-            <!-- Section 12 -->
-            <section id="sec-algorithms">
-                <h2 class="text-5xl mb-12"><span class="section-number">12.</span> Algorithmic Logic & Critical Exponents</h2>
-                <h3 class="text-2xl font-bold mb-6 italic">Protocol A: Variational Integration (QWAN Engine)</h3>
-                <div class="code-block">
-# Dimensionless Variational Integration Algorithm
-Initialize field X with noise ~ [0, sigma]
-FOR each time_step DT:
-    1. Compute Local_Mean via Gaussian_Filter(X, sigma)
-    2. Compute Variational Force F_var:
-       - Restorative: -(X - X0)
-       - Variety: +ALPHA_tilde * 2 * (X - Local_Mean)
-       - Diffusion: +BETA_tilde * Laplacian(X)
-    3. Add Stochastic Noise (F_env) following F-D Relation
-    4. Update X = X + DT * (F_var + F_env)
-END FOR
-                </div>
-
-                <div class="annotation-block resolution-node">
-                    <span class="annotation-header">Technical Diagnostic: Power-Law Verification</span>
-                    Universality requires demonstrating that $\xi \sim |\alpha - \alpha_c|^{-\nu}$ over at least one decade. We implement a finite-size scaling protocol to ensure that the extracted exponent $\nu$ is not an artifact of numerical resolution.
-                </div>
-
+            <!-- Section 5 -->
+            <section id="sec-5">
+                <h2 class="text-5xl mb-12"><span class="section-number">5.</span> The Metastable Regime: The “Alexander Point”</h2>
+                <p>
+                    Parametric sweeps identify three regimes: Chaos ($\alpha \gg \beta$), Stasis ($\beta \gg \alpha$), and the critical <strong>Alexander Point</strong> ($\alpha \approx \beta$). Here, the system avoids "equilibrium death" (global minimum) and "rigid death" (crystallization), residing in a state of precarious, long-range structural correlation.
+                </p>
+                
                 <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Algorithms</span>
-                    Missing convergence criteria and finite-size scaling. Proof that a power-law scaling region exists is required before universality claims can be validated.
+                    <span class="annotation-header">Systematic Critique: Section 5</span>
+                    The claim that α ≈ β produces a “critical” regime is qualitative and not supported by eigenvalue analysis of the linearized operator. Criticality is invoked descriptively but not tied to divergence of correlation length $\xi$.
                 </div>
             </section>
 
-            <!-- Section 14 (NEW) -->
-            <section id="sec-metastability">
-                <h2 class="text-5xl mb-12"><span class="section-number">14.</span> Metastability Clarification: Double-Well Dynamics</h2>
+            <!-- Section 6 -->
+            <section id="sec-6">
+                <h2 class="text-5xl mb-12"><span class="section-number">6.</span> Pareto Optimality and the Middle Way</h2>
                 <p>
-                    To transition from smooth relaxation to true physical metastability, we replace the harmonic well with a symmetry-breaking potential:
+                    QWAN is reframed as a <strong>Multi-Objective Optimization</strong> problem. A structure possessing "life" resides on a Pareto Front between Internal Diversity ($H_s$) and Global Order ($I_s$). It minimizes $\Phi$ by locating the optimal trade-off between form and freedom.
                 </p>
                 <div class="math-block">
-                    $$G(x) = a x^2 + b x^4, \quad (a < 0)$$
+                    $$\text{Maximize } \{ H_s(x), I_s(x) \} \text{ s.t. } \frac{\delta \Phi}{\delta x} \approx 0$$
                 </div>
+
+                <div class="annotation-block systematic-critique">
+                    <span class="annotation-header">Systematic Critique: Section 6</span>
+                    The mapping between variational stationarity and Pareto optimality is not rigorously derived. In multi-objective optimization, Pareto fronts arise from functionally independent definitions, not a single scalar $\Phi$.
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="sec-7">
+                <h2 class="text-5xl mb-12"><span class="section-number">7.</span> Information Metabolism (Complexity Absorption)</h2>
                 <p>
-                    Metastability is thus quantified via <strong>Kramers-type escape rates</strong>, where the lifetime of the structure scales exponentially with the barrier height relative to the noise intensity.
+                    The QWAN-regime acts as an <strong>Informational Sink</strong>. It absorbs environmental complexity ($C_{env}$) and internalizes it as structured variety, quantified via Mutual Information:
                 </p>
+                <div class="math-block">
+                    $$I(x; E) = H(x) + H(E) - H(x, E)$$
+                </div>
+                <p>A living structure requires $\frac{dI}{dt} \ge 0$ while maintained at a structural minimum of $\Phi$.</p>
+
+                <div class="annotation-block systematic-critique">
+                    <span class="annotation-header">Systematic Critique: Section 7</span>
+                    The entropies $H(x), H(E)$ require probability measures, yet no ensemble is specified. Without defining the probability density functional $P[x]$, information metrics lack mathematical grounding.
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="sec-8">
+                <h2 class="text-5xl mb-12"><span class="section-number">8.</span> Final Integrated Definition of QWAN</h2>
+                <p>
+                    The synthesis of the biophysical substantiation leads to the following integrated criteria for the existence of Structural Wholeness:
+                </p>
+                <div class="math-block boxed-formula shadow-2xl">
+                    $$\text{QWAN}(x^*) \iff \begin{cases} 
+                    \text{Stationarity:} & \delta \Phi / \delta x = 0 \\ 
+                    \text{Metastability:} & \delta^2 \Phi / \delta x^2 > 0 \\ 
+                    \text{Vitality:} & H_s \in [H_{min}, H_{max}] \\ 
+                    \text{Adaptation:} & \frac{d}{dt} \rho(x, E) > 0 
+                    \end{cases}$$
+                </div>
+                
+                <div class="annotation-block resolution-node">
+                    <span class="annotation-header">Technical Resolution: Closing the Definition</span>
+                    Esta equação final integra as quatro condições necessárias: estacionaridade (ponto de equilíbrio), positividade da segunda variação (estabilidade local), vitalidade (manutenção de diversidade estrutural) e adaptação (correlação temporal positiva com o ambiente).
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section id="sec-9">
+                <h2 class="text-5xl mb-12"><span class="section-number">9.</span> Replicator Dynamics and Structural Selection</h2>
+                <p>
+                    Persistence is modeled via Structural Fitness $f = -\Phi$. Using replicator dynamics:
+                </p>
+                <div class="math-block">
+                    $$\dot{x}_i = x_i(f_i - \bar f)$$
+                </div>
+                <p>Structures closer to the QWAN regime exhibit higher evolutionary persistence.</p>
+            </section>
+
+            <!-- Section 12 -->
+            <section id="sec-algorithms">
+                <h2 class="text-5xl mb-12"><span class="section-number">12.</span> Algorithmic Logic and Computational Protocols</h2>
+                
+                <h3 class="text-2xl font-bold mb-6 italic text-gray-500 underline">Protocol A: Variational QWAN Engine (Onsager Integration)</h3>
+                <div class="code-block">
+# ALGORITHM: VARIATIONAL INTEGRATION
+# PURPOSE: RELAXATION TOWARDS METASTABLE QWAN REGIME
+
+INPUT: Initial field X, Environment E, Parameters (ALPHA, BETA, GAMMA)
+OUTPUT: Evolved Field Configuration X*, Functional History
+
+FOR iteration in TOTAL_STEPS:
+    1. Compute LOCAL_AVERAGE using Gaussian convolution kernel (sigma=1.5)
+    2. Evaluate FUNCTIONAL DERIVATIVES:
+       Restorative_Force = -(X - 0.5)
+       Configurational_Freedom_Force = 2 * (X - LOCAL_AVERAGE)
+       Integrative_Coherence_Force = Laplacian(X)
+    
+    3. Calculate VARIATIONAL_PRESSURE (deltaPhi/deltaX):
+       F_var = GAMMA * Restorative_Force + ALPHA * Variety_Force + BETA * Coherence_Force
+       
+    4. Calculate ENVIRONMENTAL_FLUX (Complexity Absorption):
+       F_env = 0.1 * (E - X)
+       
+    5. Perform ONSAGER UPDATE:
+       X_new = X + DT * (L_ONSAGER * F_var + F_env)
+       X = Constrain(X_new, [0, 1])
+    
+    6. Record Metrics (Phi, H_s, I_s, Correlation)
+END FOR
+                </div>
+
+                <h3 class="text-2xl font-bold mt-12 mb-6 italic text-gray-500 underline">Protocol B: Criticality Scan & Exponent Extraction</h3>
+                <div class="code-block">
+# ALGORITHM: PHASE SPACE MAPPING
+# PURPOSE: EMPIRICAL IDENTIFICATION OF THE ALEXANDER POINT
+
+FOR (alpha, beta) in PARAMETER_GRID:
+    X_final = Execute Protocol A(alpha, beta)
+    M = Calculate_Order_Parameter(X_final) # Mean field
+    xi = Calculate_Correlation_Length(X_final) via Wiener-Khinchin
+    Store(M, xi)
+END FOR
+
+LinearFit: log(xi) vs log(|alpha - alpha_crit|) to extract Exponent Nu
+                </div>
+
+                <h3 class="text-2xl font-bold mb-10 text-center text-slate-400">Logic Flowchart</h3>
+                <div class="mermaid text-center">
+graph TD
+    A[Initial Field X] --> B[Calculate dG: Energy Restitution]
+    B --> C[Calculate dH: Variety Generation]
+    C --> D[Calculate Lap: Spatial Unity]
+    D --> E[Integrate Variational Pressure]
+    E --> F[Onsager Relaxation Update]
+    F --> G[Environmental Flux coupling]
+    G --> H{Convergence?}
+    H -- No --> A
+    H -- Yes --> I[Metastable QWAN state reached]
+                </div>
             </section>
 
             <!-- Section 10 -->
             <section id="sec-10" class="bg-slate-50 p-20 rounded shadow-inner border border-gray-100">
                 <h2 class="text-3xl mb-12 uppercase tracking-widest text-gray-900 border-b pb-8 text-center">10. Philosophical Note: A Four-Layer Epistemology</h2>
                 <div class="space-y-12 text-lg text-slate-700 leading-relaxed text-justify">
-                    <p>Layer 1: Phenomenological. Layer 2: Adaptive Landau-Ginzburg (Coarse-grained from L1). Layer 3: Stochastic TDGL (Embedded in L2). Layer 4: Renormalization scaling (Derived from L3).</p>
+                    <p>Layer 1: Phenomenological. Layer 2: Adaptive Landau-Ginzburg. Layer 3: Stochastic Model A. Layer 4: Exponent Extraction.</p>
                     
                     <div class="annotation-block systematic-critique">
                         <span class="annotation-header">Systematic Critique: Philosophical Note</span>
-                        Transitions between layers are currently conceptual rather than mathematical. Transitions from L1 to L2 require formal coarse-graining demonstrations.
+                        Transitions between layers are not mathematically demonstrated. The universality claim is speculative until numerical power-law scaling is provided.
                     </div>
                 </div>
             </section>
 
-            <!-- Section 15 (NEW) -->
-            <section id="sec-pre-requirements" class="bg-red-50 p-20 rounded-xl border border-red-200">
-                <h2 class="text-3xl mb-12 uppercase tracking-tighter text-red-900 text-center italic">Peer Review Readiness Assessment (Physical Review E)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-red-800">
-                    <div>
-                        <h4 class="font-bold mb-4 uppercase">Mandatory Technical Additions</h4>
-                        <ul class="list-disc ml-6 space-y-2">
-                            <li>Full Nondimensionalization analysis.</li>
-                            <li>Formal Linear Stability Analysis.</li>
-                            <li>Dispersion Relation derivation for $\omega(k)$.</li>
-                            <li>Rigorous Noise Model ($k_B T$).</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-4 uppercase">Numerical Evidentiary Requirements</h4>
-                        <ul class="list-disc ml-6 space-y-2">
-                            <li>Finite-size scaling demonstration.</li>
-                            <li>Power-law fitting for $\xi$ and $\beta$.</li>
-                            <li>Spectral evaluation of the Hessian operator.</li>
-                            <li>Probabilistic ensemble for $I(x;E)$.</li>
-                        </ul>
+            <!-- Final Overall Assessment -->
+            <section class="mt-20 border-t-8 border-gray-900 pt-20">
+                <h2 class="text-6xl mb-16 uppercase tracking-tighter text-center">Overall Structural Assessment</h2>
+                <div class="bg-gray-100 p-16 border border-gray-300">
+                    <p class="mb-10 text-xl font-bold font-serif text-red-800">Critical vulnerabilities identified:</p>
+                    <ul class="list-disc ml-12 space-y-6 text-lg">
+                        <li>Ambiguity between $\Phi$ as thermodynamic or purely structural.</li>
+                        <li>Absence of dimensional analysis and nondimensionalization.</li>
+                        <li>Lack of linear stability and dispersion-relation derivation.</li>
+                        <li>Undefined probabilistic framework for information-theoretic quantities.</li>
+                    </ul>
+                    <div class="mt-16 p-12 bg-white border-l-4 border-black">
+                        <p class="text-3xl italic font-serif leading-tight">
+                            "A promising theoretical architecture — not yet a demonstrated physical law."
+                        </p>
                     </div>
                 </div>
-                <p class="mt-12 font-bold text-center text-red-900 border-t border-red-200 pt-8">
-                    Current Status: Promising theoretical architecture — not yet a demonstrated physical law.
-                </p>
             </section>
 
             <footer class="text-center pt-32 pb-24 text-gray-400 text-sm font-mono tracking-widest uppercase">
-                <p>TECHNICAL REFERENCE: <a href="https://github.com/goldenluke/qwan" class="hover:text-black">GITHUB.COM/GOLDENLUKE/QWAN</a></p>
+                <p>TECHNICAL REFERENCE: <a href="https://github.com/goldenluke/qwan" class="hover:text-black underline">GITHUB.COM/GOLDENLUKE/QWAN</a></p>
                 <p class="mt-8 italic font-serif text-2xl normal-case opacity-70">"Life is a property of the configuration, not the material."</p>
-                <p class="mt-16 opacity-30">Manuscript Version 7.0-PRE-PHYSICS | Document Hash: QWAN-PHYS-FINAL-REQS</p>
+                <p class="mt-16 opacity-30">Manuscript Version 8.0-ALGO-EXP | Document Hash: QWAN-CRIT-FULL-ALGO</p>
             </footer>
         </article>
     </div>
