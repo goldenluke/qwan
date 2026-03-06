@@ -309,6 +309,62 @@
             </div>
         </section>
 
+               <!-- NOVO: Seção de Biocomplexidade Fisiológica -->
+        <section id="biocomplexity" class="mb-20 bg-slate-50 p-8 rounded-3xl border border-slate-200">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 italic text-left">Biocomplexidade: A Assinatura Fisiológica da QWAN</h2>
+            
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-300 mb-10 bg-white">
+                <img src="https://github.com/goldenluke/qwan/blob/main/qwan2.jpeg?raw=true" alt="Dashboard de Variabilidade Cardíaca" class="w-full h-auto">
+                <p class="text-xs text-slate-400 p-4 text-center uppercase tracking-widest font-bold">Figura 3: Análise de Dinâmica Não Linear em Variabilidade Cardíaca (HRV) Simulada</p>
+            </div>
+
+            <div class="serif text-lg space-y-8">
+                <p>
+                    Este painel demonstra a aplicação das ferramentas de dinâmica não linear e teoria da complexidade na interpretação da <strong>Variabilidade Cardíaca (HRV)</strong>. A análise revela como o regime metaestável QWAN opera como o estado de saúde ideal em sistemas biológicos.
+                </p>
+
+                <!-- 4.1 Métricas Clínicas -->
+                <div>
+                    <h3 class="text-xl font-bold text-indigo-700 mb-4 tracking-tight">4.1. Parâmetros Clínicos e Autonômicos</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="metric-badge"><p class="text-[10px] font-bold text-slate-500 uppercase">Mean HR</p><p class="text-lg font-black text-indigo-600">70.2 bpm</p></div>
+                        <div class="metric-badge"><p class="text-[10px] font-bold text-slate-500 uppercase">SDNN</p><p class="text-lg font-black text-indigo-600">0.0204</p></div>
+                        <div class="metric-badge"><p class="text-[10px] font-bold text-slate-500 uppercase">RMSSD</p><p class="text-lg font-black text-indigo-600">0.0039</p></div>
+                        <div class="metric-badge"><p class="text-[10px] font-bold text-slate-500 uppercase">Fractal Alpha</p><p class="text-lg font-black text-indigo-600">0.540</p></div>
+                    </div>
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li><strong>Mean HR:</strong> Centrado em 70 bpm, demonstrando plausibilidade fisiológica.</li>
+                        <li><strong>SDNN (\(\sigma(RR)\)):</strong> O valor de 0.0204 situa-se no limiar inferior da normalidade. Valores \(< 0.02\) indicariam rigidez autonômica.</li>
+                        <li><strong>RMSSD:</strong> Reflete a modulação vagal (parassimpática). Valores baixos sugerem um sistema mais rígido e menos reativo.</li>
+                        <li><strong>Fractal Alpha (DFA):</strong> O resultado de 0.54 indica um regime próximo ao ruído branco (\(\alpha \approx 0.5\)), situando-se no limite inferior da dinâmica fisiológica saudável (\(0.6 - 0.9\)).</li>
+                    </ul>
+                </div>
+
+                <!-- 4.2 Dinâmica Espaço-Temporal -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2 uppercase text-xs">Atrator de Fase (RR vs RR+1)</h4>
+                        <p class="text-sm text-slate-600">A nuvem alongada demonstra forte autocorrelação e dinâmica contínua. A ausência de saltos caóticos prova um sistema regulado biologicamente, operando em uma órbita estável porém flexível.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2 uppercase text-xs">Paisagem de Potencial \(U(x)\)</h4>
+                        <p class="text-sm text-slate-600">O vale central reconstrói o potencial efetivo \(U(x) = -\frac{\sigma^2}{2}\ln P(x)\). Representa um estado estável onde pequenas flutuações ocorrem sem quebrar a homeostase, assinatura típica de sistemas metaestáveis.</p>
+                    </div>
+                </div>
+
+                <!-- 4.3 Síntese Fisiológica -->
+                <div class="bg-indigo-900 text-white p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-indigo-300 font-bold uppercase tracking-widest text-xs mb-4">Interpretação Final do Sistema</h4>
+                    <p class="text-2xl serif italic mb-4 text-center">"NORMAL PHYSIOLOGICAL VARIABILITY"</p>
+                    <p class="text-sm opacity-80 leading-relaxed text-justify">
+                        O sistema simulado captura o equilíbrio sutil entre o sistema simpático e parassimpático. Na escala da teoria QWAN, este estado corresponde ao regime intermediário ideal: 
+                        <span class="block text-center font-bold mt-4 text-indigo-200">Rigidez (Morte) < QWAN (Vida/Saúde) < Instabilidade (Caos)</span>
+                        Este fenômeno é conhecido na fisiologia como <strong>Dinâmica Fisiológica Crítica</strong> ou <em>Fisiologia na Borda do Caos</em>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- 5 Pseudocódigo -->
         <!-- 4 Pseudocódigo (O CORAÇÃO DO MOTOR) -->
         <section id="pseudocode" class="mb-20">
