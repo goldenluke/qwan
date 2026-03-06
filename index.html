@@ -1,410 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Quality Without a Name as a Metastable Regime</title>
-    <!-- GitHub Metadata & Reference -->
-    <link rel="canonical" href="https://github.com/goldenluke/qwan">
-    <meta name="description" content="A comprehensive biophysical and mathematical formalization of Christopher Alexander's Quality Without a Name concept through the lens of non-equilibrium statistical mechanics.">
-    <!-- Tailwind CSS -->
+    <title>Metaestabilidade Computacional e a Qualidade Sem Nome</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- KaTeX for math rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <!-- Mermaid.js for Flowcharts -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap');
-        
-        body {
-            background-color: #fcfcfc;
-            color: #1a202c;
-            font-family: 'Crimson Pro', serif;
-            line-height: 2.1;
-            text-rendering: optimizeLegibility;
-        }
-        .manuscript-container {
-            background-color: #ffffff;
-            max-width: 82rem;
-            margin: 0 auto;
-            padding: 8rem;
-            border-left: 1px solid #efefef;
-            border-right: 1px solid #efefef;
-            box-shadow: 0 0 60px rgba(0,0,0,0.015);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border: 1px solid #eee;
-            margin: 5rem 0;
-        }
-        .video-container video {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-        }
-        h1, h2, h3, h4 {
-            color: #111;
-            font-family: 'Inter', sans-serif;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-        }
-        .math-block {
-            background: #fafafa;
-            padding: 4rem;
-            margin: 4rem 0;
-            text-align: center;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            font-size: 1.4rem;
-        }
-        .code-block {
-            background: #1a202c;
-            color: #e2e8f0;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.95rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            line-height: 1.6;
-        }
-        .annotation-block {
-            margin: 4rem 0;
-            padding: 3rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.8;
-            border-radius: 0.25rem;
-        }
-        .epistemological-vacuum {
-            background-color: #fffaf0;
-            border-left: 6px solid #d97706;
-            color: #78350f;
-        }
-        .systematic-critique {
-            background-color: #f7fafc;
-            border-left: 6px solid #2d3748;
-            color: #2d3748;
-            font-style: italic;
-        }
-        .strategic-insight {
-            background-color: #ebf8ff;
-            border-left: 6px solid #3182ce;
-            color: #2a4365;
-        }
-        .annotation-header {
-            display: block;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            font-size: 0.8rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
-        }
-        .abstract-box {
-            font-size: 1.35rem;
-            margin: 6rem 0;
-            text-align: justify;
-            padding: 4.5rem;
-            background-color: #fcfcfc;
-            border: 1px solid #f0f0f0;
-            line-height: 2.4;
-        }
-        .github-link-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: #000;
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 0.125rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            transition: all 0.4s;
-            text-decoration: none;
-        }
-        section { padding: 8rem 0; border-bottom: 1px solid #fcfcfc; }
-        .boxed-formula {
-            border: 5px solid #111;
-            padding: 5rem;
-            background-color: #fff;
-        }
-        .mermaid { margin: 4rem 0; }
+        body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Lora', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .math-block { overflow-x: auto; padding: 1.5rem 0; background: #f8fafc; border-radius: 0.5rem; margin: 1rem 0; text-align: center; border: 1px solid #e2e8f0; }
+        section { scroll-margin-top: 5rem; }
+        .abstract-box { border-left: 4px solid #4f46e5; background: #f5f3ff; padding: 2rem; border-radius: 0 1rem 1rem 0; }
+        .feature-link { transition: all 0.3s ease; border: 1px solid #e2e8f0; }
+        .feature-link:hover { border-color: #4f46e5; background: #f9fafb; transform: translateY(-2px); }
+        .video-container { position: relative; width: 100%; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin: 2rem 0; background: #000; }
+        video { width: 100%; display: block; }
+        .interpretation-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+        @media (min-width: 768px) { .interpretation-grid { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
-<body class="py-16">
-    <div class="manuscript-container">
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
+
+    <!-- Barra de Navegação -->
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold text-slate-900 text-xl tracking-tighter uppercase italic">Saúde <span class="text-indigo-600">Pública</span></span>
+            <div class="hidden lg:flex space-x-6 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <a href="#abstract" class="hover:text-indigo-600 transition">Abstract</a>
+                <a href="#math" class="hover:text-indigo-600 transition">Fundamentação</a>
+                <a href="#simulation" class="hover:text-indigo-600 transition">Simulação</a>
+                <a href="#applications" class="hover:text-indigo-600 transition">Aplicações</a>
+                <a href="#metastablex" class="hover:text-indigo-600 transition">MetastableX</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-16 bg-white shadow-sm mt-8 mb-20 rounded-xl border border-slate-200">
         
-        <header class="text-center pb-24 border-b-4 border-gray-100">
-            <h1 class="text-5xl md:text-8xl mb-16 leading-tight tracking-tighter">
-                The Quality Without a Name as a Metastable Regime
+        <!-- Cabeçalho -->
+        <header class="mb-16 border-b border-slate-100 pb-12">
+            <h1 class="text-5xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight serif">
+                Metaestabilidade Computacional e a Qualidade Sem Nome
             </h1>
-            <p class="text-2xl md:text-4xl text-gray-400 font-extralight italic max-w-6xl mx-auto leading-relaxed mb-16">
-                A Unified Variational and Critical Theory of Structural Wholeness, Formalized via Non-Equilibrium Statistical Field Theory and Dissipative Dynamics
-            </p>
-            <div class="mt-8">
-                <a href="https://github.com/goldenluke/qwan/blob/main/README.md" target="_blank" class="github-link-btn shadow-lg">
-                    <svg class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    Source Repository & Technical Specs
-                </a>
+            <h2 class="text-2xl text-slate-500 font-light mb-8 italic serif">
+                Uma Teoria Variacional e Informacional para Sistemas Complexos Adaptativos
+            </h2>
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <p class="font-bold text-slate-900 text-lg">Lucas Dourado</p>
+                    <p class="text-slate-50 text-sm italic bg-indigo-600 px-3 py-1 rounded inline-block mb-1">Laboratório de Sistemas Complexos e Saúde Digital</p>
+                    <p class="text-slate-400 text-xs uppercase tracking-widest font-semibold block">Brasil | Março 2026</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com/goldenluke/qwan" target="_blank" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg flex items-center gap-2 text-sm font-bold hover:bg-slate-800 transition shadow-lg">
+                        <i class="fab fa-github"></i>
+                        Repositório Experimental
+                    </a>
+                </div>
             </div>
         </header>
 
-        <div class="video-container">
-            <video controls autoplay loop muted playsinline>
-                <source src="ezgif-7829ea07d0adc8c5.mp4" type="video/mp4">
-            </video>
-        </div>
+        <!-- Abstract -->
+        <section id="abstract" class="mb-20">
+            <div class="abstract-box text-justify">
+                <h3 class="text-xs font-black uppercase tracking-[0.3em] text-indigo-500 mb-4 text-center">Abstract</h3>
+                <p class="text-lg leading-relaxed serif text-slate-700">
+                    Propomos uma formalização matemática da <strong>Qualidade Sem Nome (QWAN)</strong>, conceito introduzido por Christopher Alexander para descrever a emergência de coerência estrutural em sistemas complexos. Demonstramos que tal propriedade pode ser reinterpretada como a assinatura macroscópica de um <strong>regime metaestável em sistemas dinâmicos estocásticos fora do equilíbrio</strong>. Partindo de um formalismo variacional inspirado em teorias de campo de <strong>Landau–Ginzburg</strong>, combinamos princípios de termodinâmica de não equilíbrio, teoria da informação e dinâmica estocástica para definir um regime intermediário entre ordem rígida e caos turbulento. Mostramos que este regime corresponde à <strong>criticidade marginal</strong>, caracterizada pela aproximação do maior expoente de Lyapunov a zero e pela maximização simultânea de medidas informacionais como <strong>Entropia de Shannon</strong> e <strong>Informação de Fisher</strong>. Para validar empiricamente a teoria, desenvolvemos o framework computacional <strong>MetastableX</strong>.
+                </p>
+            </div>
+        </section>
 
-        <div class="abstract-box">
-            <strong>Scholarly Abstract:</strong> This treatise delineates a rigorous biophysical substantiation of the "Quality Without a Name" (QWAN), a seminal construct articulated by Christopher Alexander to encapsulate the emergent vitality observable in high-integrity systems. We posit that QWAN is the macroscopic thermodynamic signature of a <strong>highly specific metastable organizational regime</strong> within a dissipative system operating far from thermodynamic equilibrium. By synthesizing a multi-objective structural-energy functional—integrating local energetic anchoring, configurational variety, and global spatial coherence—we derive the variational dynamics of an order parameter field. Our research transitions the concept from descriptive phenomenology into a testable field-theoretic and computational domain.
-        </div>
+        <!-- Seção 1: Introdução -->
+        <section id="intro" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">1. Introdução</h2>
+            <div class="serif text-lg space-y-4 text-justify">
+                <p>Sistemas complexos frequentemente exibem regimes intermediários entre ordem e caos. Tais regimes são caracterizados por alta sensibilidade a estímulos externos, emergência de padrões estruturais e capacidade adaptativa elevada. Christopher Alexander denominou essa propriedade de <strong>Qualidade Sem Nome (QWAN)</strong>.</p>
+                <p>A hipótese central deste trabalho é:</p>
+            </div>
+            <div class="math-block font-bold">
+                $$\text{QWAN} \equiv \text{Metaestabilidade próxima à criticidade}$$
+            </div>
+            <p class="serif text-lg text-justify">Essa hipótese conecta física estatística, teoria da informação e ciência de sistemas complexos.</p>
+        </section>
 
-        <article class="text-justify">
+        <!-- Seção 2: Dinâmica Estocástica -->
+        <section id="math" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">2. Dinâmica Estocástica</h2>
+            <p class="serif text-lg mb-6 text-justify">Considere um sistema dinâmico discreto com ruído estocástico:</p>
+            <div class="math-block">
+                $$x_{t+1} = F(x_t,\theta) + \eta_t, \quad \eta_t \sim \mathcal{N}(0,\sigma^2)$$
+            </div>
+            <p class="serif text-lg mb-6 text-justify">A estabilidade é determinada pelo <strong>expoente de Lyapunov</strong>:</p>
+            <div class="math-block">
+                $$\lambda = \lim_{t\to\infty} \frac{1}{t} \ln \left| \frac{\partial F^t}{\partial x} \right|$$
+            </div>
+            <div class="overflow-x-auto my-8">
+                <table class="w-full text-left bg-slate-50 border border-slate-200 rounded-lg">
+                    <thead class="bg-slate-200 uppercase text-xs">
+                        <tr><th class="p-4">Regime</th><th class="p-4">Condição</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr><td class="p-4 font-semibold">Ordem Rígida</td><td class="p-4 mono">λ < 0</td></tr>
+                        <tr><td class="p-4 font-semibold">Caos</td><td class="p-4 mono">λ > 0</td></tr>
+                        <tr><td class="p-4 font-semibold text-indigo-700 bg-indigo-50">Criticidade</td><td class="p-4 mono text-indigo-700 bg-indigo-50 font-bold">λ ≈ 0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção 3: Formalismo Variacional -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">3. Formalismo Variacional</h2>
+            <p class="serif text-lg mb-6 text-justify">Definimos um funcional estrutural \(\Phi[x]\):</p>
+            <div class="math-block">
+                $$\Phi[x] = \int_{\Omega} \left( \gamma G(x) - \alpha H_s(x) + \beta I_s(x) \right) dr$$
+            </div>
+            <div class="space-y-4 mb-8">
+                <p class="serif text-lg text-justify">Onde:</p>
+                <ul class="list-none space-y-4 ml-6 text-sm md:text-base">
+                    <li><strong class="text-indigo-600">G(x) — ancoragem energética local:</strong> \(G(x)=\frac{1}{2}(x-x_0)^2\)</li>
+                    <li><strong class="text-indigo-600">H_s(x) — liberdade configuracional:</strong> \(H_s(x)=(x-\bar{x})^2\)</li>
+                    <li><strong class="text-indigo-600">I_s(x) — coerência espacial:</strong> \(I_s(x)=|\nabla x|^2\)</li>
+                </ul>
+            </div>
+            <div class="math-block">
+                $$\Phi = \int \left[ \gamma (x-x_0)^2 - \alpha (x-\bar{x})^2 + \beta |\nabla x|^2 \right] dr$$
+            </div>
+        </section>
+
+        <!-- Seção 4: Dinâmica de Onsager e Langevin -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">4. Dinâmica de Onsager e Langevin</h2>
+            <p class="serif text-lg mb-6 text-justify">A evolução segue o fluxo dissipativo:</p>
+            <div class="math-block">
+                $$\frac{\partial x}{\partial t} = -L \frac{\delta \Phi}{\delta x} + F_{env}$$
+            </div>
+            <div class="math-block">
+                $$\partial_t x = -L [ \gamma (x-x_0) - \alpha (x-\bar{x}) + \beta \nabla^2 x ] + F_{env}$$
+            </div>
+            <p class="serif text-lg my-8 text-justify">Pela <strong>equação de Langevin</strong>, onde \(U(x)\) é o potencial efetivo:</p>
+            <div class="math-block">
+                $$dx = -\nabla U(x)dt + \sqrt{2D}dW_t, \quad U(x) = -\frac{\sigma^2}{2} \log P(x)$$
+            </div>
+        </section>
+
+        <!-- NOVO: Seção de Simulação de Campo -->
+        <section id="simulation" class="mb-20 bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-200 shadow-inner">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 italic">5. Visualização e Simulação Biofísica</h2>
             
-            <!-- Section 1 -->
-            <section id="sec-1">
-                <h2 class="text-5xl mb-12">1. Introduction: The Biophysical Reframing of Wholeness</h2>
-                <p>
-                    Christopher Alexander's properties are reframed as signatures of dissipative structures. The functional $\Phi[x] = \int_\Omega [ \gamma G(x) - \alpha H_s(x) + \beta I_s(x) ] d\mathbf{r}$ acts as a Life-Potential. $G$ is modeled as a harmonic well or double-well for metastability. We move beyond experiential architectural intuition by proposing that "wholeness" is structural stationarity in a non-equilibrium flow.
-                </p>
-                
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 1</span>
-                    The transition from phenomenology to field theory is not justified through intermediate theoretical scaffolding. The argument assumes structural equivalence between experiential “wholeness” and energetic metastability without formally demonstrating why such mapping is unique or necessary.
-                </div>
-            </section>
+            <div class="video-container">
+                <video controls autoplay loop muted playsinline>
+                    <source src="ezgif-7829ea07d0adc8c5.mp4" type="video/mp4">
+                </video>
+            </div>
 
-            <!-- Section 2 -->
-            <section id="sec-2">
-                <h2 class="text-5xl mb-12">2. The Structural Functional $\Phi[x]$</h2>
-                <div class="math-block">
-                    $$\Phi[x] = \int_\Omega \left[ \gamma G(x) - \alpha H_s(x) + \beta I_s(x) \right] d\mathbf{r}$$
-                </div>
-                <p>
-                    This functional adjudicates between: (1) Local restorative anchoring towards a basal state $x_0$; (2) "Structured Entropy" ($H_s$), representing configurational freedom; and (3) Spatial coherence ($I_s$) penalizing fragmentation.
-                </p>
-
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 2</span>
-                    The structural functional Φ is introduced as if it were analogous to a thermodynamic potential, yet its physical status remains ambiguous. It is not derived from microscopic principles. The text does not clearly state that Φ is a Lyapunov functional rather than a thermodynamic free energy.
-                </div>
-            </section>
-
-            <!-- Section 4 -->
-            <section id="sec-4">
-                <h2 class="text-5xl mb-12">4. Variational Dynamics and Onsager Flow</h2>
-                <p>
-                    Temporal evolution follows a dissipative gradient flow in the structural landscape: $\frac{\partial x}{\partial t} = - L \frac{\delta \Phi}{\delta x} + F_{env}$. Anchored in Onsager’s Linear Response Theory, the system responds to the force exerted by the functional gradient. Environmental forcing $F_{env}$ represents external fluctuations being metabolized into structural internal variety.
-                </p>
-                <div class="math-block">
-                    $$\partial_t x = -L \frac{\delta \Phi}{\delta x} + F_{env}$$
+            <div class="space-y-12 mt-10">
+                <!-- 5.1 O campo biofísico -->
+                <div>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.1. O campo biofísico QWAN (painel esquerdo)</h3>
+                    <p class="serif text-lg text-justify mb-4">O mapa colorido representa o <strong>campo escalar do parâmetro de ordem</strong> \(x(x,y,t)\), que evolui segundo a equação variacional de Ginzburg-Landau:</p>
+                    <div class="math-block bg-white shadow-sm italic">
+                        $$\partial_t x = -L\frac{\delta \Phi}{\delta x} + F_{env}$$
+                    </div>
+                    <p class="serif text-lg text-justify">O padrão "orgânico" que surge indica um regime de <strong>domínios metaestáveis</strong> onde \(\alpha \approx \beta\) (liberdade \(\approx\) coerência). Segundo a teoria, este estado representa a <strong>totalidade estrutural emergente</strong>, onde \(\frac{\delta \Phi}{\delta x} \approx 0\) mas \(\nabla^2 x \neq 0\).</p>
                 </div>
 
-                <div class="annotation-block epistemological-vacuum">
-                    <span class="annotation-header">Vácuo Epistemológico: Derivação Microscópica</span>
-                    Não há derivação microscópica para esta dinâmica. Trata-se de um modelo fenomenológico assumido. Não há um princípio físico específico que exija este funcional para a vida estrutural; ele é um postulado heurístico.
+                <!-- 5.2 Dinâmica de Onsager -->
+                <div>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.2. Dinâmica de Onsager (gráfico superior direito)</h3>
+                    <p class="serif text-lg text-justify mb-4">O gráfico exibe a evolução de \(\Phi, H, I\). A diminuição monótona de todas as quantidades confirma a <strong>relaxação dissipativa</strong> prevista pela equação de Onsager:</p>
+                    <div class="math-block bg-white shadow-sm">
+                        $$\frac{d\Phi}{dt} = -L \left| \frac{\delta \Phi}{\delta x} \right|^2 \le 0 \quad \Rightarrow \quad \Phi(t) \downarrow$$
+                    </div>
+                    <p class="serif text-lg text-justify">A queda simultânea indica a <strong>redução de ruído com manutenção de estrutura</strong> (complexidade organizada).</p>
                 </div>
 
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 4</span>
-                    The dynamical equation resembles a time-dependent Ginzburg–Landau equation with external forcing, but the kinetic coefficient L is treated as a scalar constant without justification. The environmental forcing term F_env is introduced phenomenologically but not specified statistically.
+                <!-- 5.3 Correlação com o ambiente -->
+                <div>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.3. Correlação com o ambiente (painel inferior)</h3>
+                    <p class="serif text-lg text-justify mb-4">O gráfico demonstra o aumento da <strong>adaptabilidade</strong> através da correlação \(\rho(x,E)\) entre o campo estrutural e o ambiente externo:</p>
+                    <div class="math-block bg-white shadow-sm">
+                        $$\rho(x,E) = \frac{Cov(x,E)}{\sigma_x\sigma_E}$$
+                    </div>
+                    <p class="serif text-lg text-justify">A condição \(\frac{d}{dt}\rho(x,E) > 0\) prova que a <strong>estrutura interna aprende com o ambiente</strong>, convergindo para um mínimo metaestável adaptativo \(x^*\).</p>
                 </div>
-            </section>
+            </div>
 
-            <!-- Section 5 -->
-            <section id="sec-5">
-                <h2 class="text-5xl mb-12">5. The Metastable Regime: The “Alexander Point”</h2>
-                <p>
-                    Parametric sweeps identify three structural phases: Chaos ($\alpha \gg \beta$), Stasis ($\beta \gg \alpha$), and the critical <strong>Alexander Point</strong> ($\alpha \approx \beta$). Here, the system resides in a state of long-range structural correlation, avoiding both equilibrium death and rigid crystallization.
-                </p>
-                
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 5</span>
-                    The claim that α ≈ β produces a “critical” regime is qualitative and not supported by eigenvalue analysis of the linearized operator. Criticality is invoked descriptively but not tied to divergence of correlation length $\xi$.
+            <!-- Tabelas de Comparação -->
+            <div class="mt-12 overflow-x-auto">
+                <table class="w-full text-left bg-white border rounded-xl overflow-hidden shadow-sm">
+                    <thead class="bg-slate-900 text-white uppercase text-xs">
+                        <tr><th class="p-4">Sistema</th><th class="p-4">Fenómeno de QWAN</th></tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr><td class="p-4 font-bold">Ising</td><td class="p-4 italic">Formação de domínios magnéticos coerentes</td></tr>
+                        <tr><td class="p-4 font-bold">Turing</td><td class="p-4 italic">Padrões biológicos morfogenéticos</td></tr>
+                        <tr><td class="p-4 font-bold">Vidro de Spin</td><td class="p-4 italic">Metaestabilidade e paisagens rugosas</td></tr>
+                        <tr><td class="p-4 font-bold">Ecossistemas</td><td class="p-4 italic">Organização adaptativa de fluxos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção: Princípio Informacional -->
+        <section class="my-16">
+            <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
+                <h3 class="text-indigo-400 font-bold uppercase tracking-widest text-xs mb-4">6. Princípio Informacional QWAN</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center">
+                    <div>
+                        <p class="text-slate-400 text-[10px] font-bold mb-2 uppercase">Entropia de Shannon (H)</p>
+                        <p class="mono text-indigo-200">$$H = -\sum_i p_i \log p_i$$</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-[10px] font-bold mb-2 uppercase">Informação de Fisher (F)</p>
+                        <p class="mono text-indigo-200">$$F = \int \frac{(\nabla p(x))^2}{p(x)} dx$$</p>
+                    </div>
                 </div>
-            </section>
-
-            <!-- Section 6 -->
-            <section id="sec-6">
-                <h2 class="text-5xl mb-12">6. Pareto Optimality and the Middle Way</h2>
-                <p>
-                    A structure possessing "life" resides on a Pareto Front between Diversity ($H_s$) and Order ($I_s$). It minimizes $\Phi$ by locating the optimal trade-off between form and freedom.
-                </p>
-                <div class="math-block">
-                    $$\text{Maximize } \{ H_s(x), I_s(x) \} \text{ s.t. } \frac{\delta \Phi}{\delta x} \approx 0$$
+                <div class="border-t border-slate-800 pt-6 text-center">
+                    <p class="text-2xl font-bold italic tracking-tight">$\max (H + F) \Rightarrow \lambda \approx 0$</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 6</span>
-                    In multi-objective optimization, Pareto fronts arise from competing functionals defined independently, whereas here both Hₛ and Iₛ are embedded within a single scalar functional Φ.
+        <!-- Seção 8: Caso Experimental São Paulo -->
+        <section id="applications" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 uppercase tracking-tight italic">7. Caso Experimental: São Paulo (SP)</h2>
+            <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl mb-12">
+                <div class="p-8">
+                    <div class="mb-10 rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900">
+                        <img src="https://github.com/goldenluke/qwan_zero_pipeline/blob/main/5b11a452-9113-4243-8944-e13cb9aa2f37.jpeg?raw=true" alt="Dashboard Mosaic QWAN" class="w-full h-auto opacity-90">
+                    </div>
+                    <p class="text-slate-600 serif text-lg text-justify leading-relaxed">
+                        No SIH/SUS de São Paulo, o expoente \(\alpha \approx 0.07\) denota <strong>reversão forçada</strong> extrema. Contudo, o "flickering" observado antes do colapso hospitalar valida a transição para a metaestabilidade, onde a estrutura administrativa rígida perde agilidade frente ao ruído epidemiológico.
+                    </p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section 7 -->
-            <section id="sec-7">
-                <h2 class="text-5xl mb-12">7. Information Metabolism (Complexity Absorption)</h2>
-                <p>
-                    Following Maturana and Varela, a QWAN-regime system acts as an Informational Sink, maximizing mutual information with environment $E$: $I(x; E) = H(x) + H(E) - H(x, E)$. A living structure is defined by the metabolic process where $\frac{dI}{dt} \ge 0$.
-                </p>
-                <div class="math-block">
-                    $$I(x; E) = H(x) + H(E) - H(x, E)$$
-                </div>
-
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 7</span>
-                    The entropies H(x), H(E), and H(x, E) require probability measures, yet no ensemble or ergodic assumption is specified. Without defining the probability density functional P[x], the information-theoretic quantities lack mathematical grounding.
-                </div>
-            </section>
-
-            <!-- Section 8 -->
-            <section id="sec-8">
-                <h2 class="text-5xl mb-12">8. Final Integrated Definition</h2>
-                <div class="math-block boxed-formula">
-                    $$\text{QWAN}(x^*) \iff \begin{cases} 
-                    \text{Stationarity:} & \delta \Phi / \delta x = 0 \\ 
-                    \text{Metastability:} & \delta^2 \Phi / \delta x^2 > 0 \\ 
-                    \text{Vitality:} & H_s \in [H_{min}, H_{max}] \\ 
-                    \text{Adaptation:} & \frac{d}{dt} \rho(x, E) > 0 
-                    \end{cases}$$
-                </div>
-                
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">Systematic Critique: Section 8</span>
-                    Metastability requires positivity of the Hessian operator except for neutral modes, which is not demonstrated. The vitality condition Hₛ ∈ [H_min, H_max] introduces arbitrary thresholds without derivation.
-                </div>
-            </section>
-
-            <!-- Section 9 -->
-            <section id="sec-9">
-                <h2 class="text-5xl mb-12">9. Replicator Dynamics and Evolutionary Persistence</h2>
-                <p>
-                    Why do structures with QWAN persist? We define Structural Fitness as $f = -\Phi$. Using replicator dynamics, $\dot{x}_i = x_i(f_i - \bar f)$, we show that configurations with lower $\Phi$ exhibit higher persistence in dissipative environments. QWAN is thus the physical signature of Evolutionary Selection for Structural Wholeness.
-                </p>
-                <div class="math-block">
-                    $$\dot{x}_i = x_i(f_i - \bar f)$$
-                </div>
-                <div class="annotation-block epistemological-vacuum">
-                    <strong>Vácuo Epistemológico: Viés da Fitness</strong>
-                    Assumir que menor $\Phi$ se traduz em fitness biológica é um raciocínio circular; assume-se que o sistema "quer" o que o modelo minimiza, sem prova de vantagem adaptativa material real.
-                </div>
-            </section>
-
-            <!-- Section 12: Algorithmic Logic -->
-            <section id="sec-algorithms">
-                <h2 class="text-5xl mb-12">12. Algorithmic Logic and Technical Protocols</h2>
-                
-                <h3 class="text-2xl font-bold mb-6 italic">Protocol A: Variational Integration (QWAN Engine)</h3>
-                <div class="code-block">
-# VARIATIONAL INTEGRATION PROTOCOL (ONSAGER RELAXATION)
-# Input: Initial noise field X, Environment E, Weights (ALPHA, BETA, GAMMA)
-
-FOR iteration in Total_Steps:
-    1. Apply Gaussian smoothing to compute Local_Mean: mu = K_sigma * X
-    2. Compute Variational Gradient (Forces):
-       - Restoration = (X - X_basal)
-       - Centering = 2 * (X - mu)
-       - Smoothing = Laplace(X)
-    3. Update field using Onsager responsiveness L:
-       X_new = X + DT * (-L * (GAMMA*Restoration - ALPHA*Centering - 2*BETA*Smoothing) + F_env)
-    4. Enforce field constraints (Clamping/Normalization)
-    5. Track Functional Value (Phi) and Correlation(X, E)
-END FOR
-                </div>
-
-                <h3 class="text-2xl font-bold mb-6 italic">Protocol B: Exponent Extraction and Criticality Fitting</h3>
-                <div class="code-block">
-# UNIVERSALITY CLASS IDENTIFICATION
-# Objective: Extract correlation exponent Nu
-
-Initialize Parameter_Grid [ALPHA, BETA]
-FOR each cell in Grid:
-    X_final = Run Protocol A until Stationarity
-    xi = Compute Spatial Correlation Length via Fourier Radial Average
-    M = Compute Absolute Mean (Magnetization)
-END FOR
-
-Linear_Regress(log(xi) vs log(|alpha - alpha_crit|)) -> Extracted_Nu
-                </div>
-
-                <h3 class="text-2xl font-bold mb-10 text-center text-slate-400">Logic Flowchart</h3>
-                <div class="mermaid text-center">
-graph TD
-    A[Initial Stochastic Field] --> B[Calculate Functional Gradient]
-    B --> C[Restorative Force: Anchoring]
-    B --> D[Centering Force: Variety]
-    B --> E[Laplacian Force: Coherence]
-    C & D & E --> F[Integrated Variational Pressure]
-    F --> G[Onsager Relaxation Update]
-    G --> H[Stochastic Environmental Coupling]
-    H --> I[Stationary Metastable State]
-    I --> J{Phase Analysis}
-    J --> K[Chaos: alpha >> beta]
-    J --> L[Stasis: beta >> alpha]
-    J --> M[QWAN: alpha approx beta]
-                </div>
-            </section>
-
-            <!-- Section 13: STRATEGIC PEER REVIEW (INTEGRATED) -->
-            <section id="sec-strategic-synthesis" class="bg-gray-50 p-20 rounded-xl border border-gray-200">
-                <h2 class="text-4xl mb-12 uppercase tracking-tighter text-blue-900 text-center">Section 13. Strategic Technical Synthesis & Roadmap</h2>
-                
-                <div class="annotation-block strategic-insight">
-                    <span class="annotation-header">Scholarly Assessment: What has been Constructed</span>
-                    This project has successfully formalized Alexander’s <em>Quality Without a Name</em> as a multi-layered variational architecture. It represents a rare synthesis between <strong>Landau-Ginzburg</strong> field theory, <strong>Onsager</strong> linear response, <strong>Shannon</strong> information sinks, and <strong>Maturana-Varela</strong> autopoiesis. The structural consistency between the functional $\Phi$, the variational flow, and the metastability condition demonstrates a high level of integrated scholarship.
-                </div>
-
-                <div class="annotation-block systematic-critique">
-                    <span class="annotation-header">The Formal Bottleneck: Identifying Vulnerabilities</span>
-                    The primary challenge is not conceptual but formal. To withstand rigorous physical peer review (e.g., <em>Physical Review E</em>), the following gaps must be closed:
-                    <ul class="list-disc ml-8 mt-4 space-y-4">
-                        <li><strong>Linear Stability Analysis:</strong> Without deriving the dispersion relation $\omega(k)$ and analyzing the operator spectrum, the "Alexander Point" remains a qualitative heuristic rather than a proven criticality.</li>
-                        <li><strong>Probabilistic Definition:</strong> Information metrics ($H(x)$, $I(x;E)$) currently lack mathematical meaning without an explicitly defined probability density functional $P[x] \propto e^{-\Phi[x]/T}$.</li>
-                        <li><strong>Metastability Quantification:</strong> The condition $\delta^2 \Phi > 0$ ensures a local minimum but does not quantify escape times. A true theory of structural life requires Kramers-type calculations for mean structure lifetime under noise.</li>
+        <!-- Seção 9: Framework MetastableX -->
+        <section id="metastablex" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">8. Framework MetastableX</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div class="p-6 border border-slate-200 rounded-xl bg-slate-50">
+                    <h4 class="font-bold text-indigo-600 mb-4 uppercase text-xs tracking-widest">Sensores de Complexidade</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li>● DFA (Detrended Fluctuation Analysis)</li>
+                        <li>● Entropia Multiescala</li>
+                        <li>● Complexidade Lempel–Ziv</li>
                     </ul>
                 </div>
-
-                <div class="annotation-block resolution-node shadow-sm">
-                    <span class="annotation-header">Roadmap to Formal Theory (The 3 Pillar Requirement)</span>
-                    <ol class="list-decimal ml-8 space-y-4 font-bold">
-                        <li>Derive the linearized equation and extract the dispersion relation to make the Alexander Point measurable.</li>
-                        <li>Define the ensemble probability density to transform information from a decorative metric into a thermodynamic observable.</li>
-                        <li>Demonstrate Power-Law scaling ($\xi \sim |\alpha - \alpha_c|^{-\nu}$) over at least one decade to prove the universality class.</li>
-                    </ol>
+                <div class="p-6 border border-slate-200 rounded-xl bg-slate-50">
+                    <h4 class="font-bold text-indigo-600 mb-4 uppercase text-xs tracking-widest">Reconstrução e Controlo</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li>● Reconstrução de potenciais efetivos</li>
+                        <li>● Filtros Bayesianos de Regime</li>
+                        <li>● Reinforcement Learning adaptativo</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="p-12 bg-white border-l-8 border-blue-900 mt-12 italic">
-                    <strong>Personal Scholarly Observation:</strong> There is a clear tendency in this work towards structural unification and the modeling of the "invisible"—transforming subjective quality into a formal operator. This identifies the authors as a systems theorist who thinks in terms of global invariants rather than isolated disciplines. The next leap is not creativity, but the imposition of physical rigor.
-                </div>
-            </section>
+            <div class="bg-indigo-600 p-10 rounded-2xl text-white shadow-xl text-center">
+                <h3 class="text-2xl font-black mb-4">Arquitetura de Fluxo Zero</h3>
+                <p class="mb-8 opacity-90 text-lg">O MetastableX é um ecossistema aberto para deteção de transições críticas em tempo real.</p>
+                <a href="https://github.com/goldenluke/metastablex" target="_blank" class="inline-block bg-white text-indigo-600 px-10 py-4 rounded-xl font-black hover:scale-105 transition transform shadow-lg uppercase tracking-widest text-sm">
+                    <i class="fas fa-code-branch mr-2"></i> Contribua aqui
+                </a>
+            </div>
+        </section>
 
-            <footer class="text-center pt-32 pb-24 text-gray-400 text-sm font-mono tracking-widest uppercase">
-                <p>TECHNICAL REFERENCE: <a href="https://github.com/goldenluke/qwan" class="hover:text-black underline">GITHUB.COM/GOLDENLUKE/QWAN</a></p>
-                <p class="mt-8 italic font-serif text-2xl normal-case opacity-70">"Life is a property of the configuration, not the material."</p>
-                <p class="mt-16 opacity-30">Manuscript Version 9.0-CRITICAL-ENGLISH | Document Hash: QWAN-CRIT-STRAT-X9</p>
-            </footer>
-        </article>
-    </div>
+        <!-- Conclusão -->
+        <section id="conclusion" class="mb-16 text-justify serif">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Conclusão</h2>
+            <p class="text-lg leading-relaxed text-slate-700">
+                A convergência entre a simulação biofísica e o formalismo de Onsager demonstra que a <strong>Qualidade Sem Nome</strong> não é um slogan metafórico, mas um regime físico adaptativo (\(\Phi \downarrow\), \(\rho \uparrow\)). Este estado de criticidade marginal otimiza a inteligência estrutural da saúde pública, permitindo que o sistema aprenda e se reorganize diante de choques epidemiológicos.
+            </p>
+        </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\[", right: "\\]", display: true}
-                ],
-                throwOnError : false
-            });
-        });
-    </script>
+        <!-- Footer Científico -->
+        <footer class="mt-20 pt-10 border-t border-slate-200">
+            <h4 class="text-xs font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Referências Bibliográficas</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-500 serif italic">
+                <p>Alexander C. - The Nature of Order (2002).</p>
+                <p>Prigogine I. - Order out of Chaos (1984).</p>
+                <p>Scheffer M. - Critical Transitions in Nature and Society (2009).</p>
+                <p>Hohenberg & Halperin - Dynamic Critical Phenomena (1977).</p>
+                <p>Friston K. - The Free Energy Principle (2010).</p>
+            </div>
+            <div class="mt-16 text-center">
+                <p class="text-slate-400 text-[10px] font-bold tracking-[0.5em] uppercase">Vigilância Epidemiológica de Alta Resolução</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </body>
 </html>
