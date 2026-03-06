@@ -77,7 +77,7 @@
 
         <!-- Seção 1: Introdução -->
         <section id="intro" class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">1. Introdução</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Introdução</h2>
             <div class="serif text-lg space-y-4 text-justify">
                 <p>Sistemas complexos frequentemente exibem regimes intermediários entre ordem e caos. Tais regimes são caracterizados por alta sensibilidade a estímulos externos, emergência de padrões estruturais e capacidade adaptativa elevada. Christopher Alexander denominou essa propriedade de <strong>Qualidade Sem Nome (QWAN)</strong>.</p>
                 <p>A hipótese central deste trabalho é:</p>
@@ -104,7 +104,7 @@
         
         <!-- Seção 2: Dinâmica Estocástica -->
         <section id="math" class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">2. Dinâmica Estocástica</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Dinâmica Estocástica</h2>
             <p class="serif text-lg mb-6 text-justify">Considere um sistema dinâmico discreto com ruído estocástico:</p>
             <div class="math-block">
                 $$x_{t+1} = F(x_t,\theta) + \eta_t, \quad \eta_t \sim \mathcal{N}(0,\sigma^2)$$
@@ -131,7 +131,7 @@
         
         <!-- Seção 3: Formalismo Variacional -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">3. Formalismo Variacional</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Formalismo Variacional</h2>
             <p class="serif text-lg mb-6 text-justify">Definimos um funcional estrutural \(\Phi[x]\):</p>
             <div class="math-block">
                 $$\Phi[x] = \int_{\Omega} \left( \gamma G(x) - \alpha H_s(x) + \beta I_s(x) \right) dr$$
@@ -151,7 +151,7 @@
 
         <!-- Seção 4: Dinâmica de Onsager e Langevin -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">4. Dinâmica de Onsager e Langevin</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Dinâmica de Onsager e Langevin</h2>
             <p class="serif text-lg mb-6 text-justify">A evolução segue o fluxo dissipativo:</p>
             <div class="math-block">
                 $$\frac{\partial x}{\partial t} = -L \frac{\delta \Phi}{\delta x} + F_{env}$$
@@ -165,54 +165,10 @@
             </div>
         </section>
 
-<!-- NOVO: Galeria QWAN de Evidências (Interpretando o Repositório) -->
-        <section id="gallery" class="mb-20">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 italic">Galeria de Evidências: Repositório QWAN</h2>
-            <p class="serif text-lg mb-8 text-justify">As visualizações extraídas dos experimentos em <a href="https://github.com/goldenluke/qwan" class="text-indigo-600 underline">github.com/goldenluke/qwan</a> fornecem a prova empírica da metaestabilidade em diversos domínios.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Evidência 1: Paisagem de Energia -->
-                <div class="evidence-card shadow-sm">
-                    <div class="bg-slate-100 rounded-lg h-48 flex items-center justify-center overflow-hidden border border-slate-200">
-                        <span class="text-slate-300 font-bold italic">[Visualização de Poço de Potencial U(x)]</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mt-4">Topografia da Estabilidade</h4>
-                    <p class="text-sm text-slate-600 mt-2 text-justify">Representa o potencial efetivo \(U(x) = -\frac{\sigma^2}{2} \log P(x)\). Vales profundos indicam regimes de <strong>ordem rígida</strong>; vales rasos e múltiplos indicam <strong>metaestabilidade QWAN</strong>, onde o sistema pode transitar entre estados adaptativos sem colapsar no caos.</p>
-                </div>
-
-                <!-- Evidência 2: Atrator de Fase -->
-                <div class="evidence-card shadow-sm">
-                    <div class="bg-slate-100 rounded-lg h-48 flex items-center justify-center overflow-hidden border border-slate-200">
-                        <span class="text-slate-300 font-bold italic">[Atrator de Fase - Órbita Crítica]</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mt-4">Geometria do Atrator</h4>
-                    <p class="text-sm text-slate-600 mt-2 text-justify">Visualiza a trajetória do sistema no espaço de estados. A aproximação de um ciclo-limite ou de uma órbita complexa no limiar da criticidade (\(\lambda \approx 0\)) mostra como a metaestabilidade preserva a <strong>diversidade de respostas</strong> ante estímulos externos.</p>
-                </div>
-
-                <!-- Evidência 3: Early Warning Signals -->
-                <div class="evidence-card shadow-sm">
-                    <div class="bg-slate-100 rounded-lg h-48 flex items-center justify-center overflow-hidden border border-slate-200">
-                        <span class="text-slate-300 font-bold italic">[Gráficos de Variância e Autocorrelação]</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mt-4">Lentidão Crítica (CSD)</h4>
-                    <p class="text-sm text-slate-600 mt-2 text-justify">Gráficos de subida abrupta na variância móvel e na autocorrelação lag-1. Na teoria QWAN, estes são os <strong>Early Warning Signals</strong>: avisam que a barreira energética \(\Delta U\) está a achatar, precedendo uma transição sistémica (ex: surto epidemiológico ou crash financeiro).</p>
-                </div>
-
-                <!-- Evidência 4: Complexidade Multiescala -->
-                <div class="evidence-card shadow-sm">
-                    <div class="bg-slate-100 rounded-lg h-48 flex items-center justify-center overflow-hidden border border-slate-200">
-                        <span class="text-slate-300 font-bold italic">[Entropia por Escala Temporal]</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mt-4">Assinatura Informacional</h4>
-                    <p class="text-sm text-slate-600 mt-2 text-justify">Mostra como a entropia se comporta em diferentes resoluções. Um sistema com QWAN mantém alta complexidade em múltiplas escalas, ao contrário do ruído branco (que decai) ou da ordem rígida (que é nula), provando a existência de <strong>estrutura hierárquica organizada</strong>.</p>
-                </div>
-            </div>
-        </section>
-
         
         <!-- NOVO: Seção de Simulação de Campo -->
         <section id="simulation" class="mb-20 bg-slate-50 p-6 md:p-10 rounded-3xl border border-slate-200 shadow-inner">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8 italic">5. Visualização e Simulação Biofísica</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 italic">Visualização e Simulação Biofísica</h2>
             
             <div class="video-container">
                 <video controls autoplay loop muted playsinline>
@@ -223,7 +179,7 @@
             <div class="space-y-12 mt-10">
                 <!-- 5.1 O campo biofísico -->
                 <div>
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.1. O campo biofísico QWAN (painel esquerdo)</h3>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">O campo biofísico QWAN (painel esquerdo)</h3>
                     <p class="serif text-lg text-justify mb-4">O mapa colorido representa o <strong>campo escalar do parâmetro de ordem</strong> \(x(x,y,t)\), que evolui segundo a equação variacional de Ginzburg-Landau:</p>
                     <div class="math-block bg-white shadow-sm italic">
                         $$\partial_t x = -L\frac{\delta \Phi}{\delta x} + F_{env}$$
@@ -233,7 +189,7 @@
 
                 <!-- 5.2 Dinâmica de Onsager -->
                 <div>
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.2. Dinâmica de Onsager (gráfico superior direito)</h3>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">Dinâmica de Onsager (gráfico superior direito)</h3>
                     <p class="serif text-lg text-justify mb-4">O gráfico exibe a evolução de \(\Phi, H, I\). A diminuição monótona de todas as quantidades confirma a <strong>relaxação dissipativa</strong> prevista pela equação de Onsager:</p>
                     <div class="math-block bg-white shadow-sm">
                         $$\frac{d\Phi}{dt} = -L \left| \frac{\delta \Phi}{\delta x} \right|^2 \le 0 \quad \Rightarrow \quad \Phi(t) \downarrow$$
@@ -243,7 +199,7 @@
 
                 <!-- 5.3 Correlação com o ambiente -->
                 <div>
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">5.3. Correlação com o ambiente (painel inferior)</h3>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4 tracking-tight">Correlação com o ambiente (painel inferior)</h3>
                     <p class="serif text-lg text-justify mb-4">O gráfico demonstra o aumento da <strong>adaptabilidade</strong> através da correlação \(\rho(x,E)\) entre o campo estrutural e o ambiente externo:</p>
                     <div class="math-block bg-white shadow-sm">
                         $$\rho(x,E) = \frac{Cov(x,E)}{\sigma_x\sigma_E}$$
@@ -271,7 +227,7 @@
         <!-- Seção: Princípio Informacional -->
         <section class="my-16">
             <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
-                <h3 class="text-indigo-400 font-bold uppercase tracking-widest text-xs mb-4">6. Princípio Informacional QWAN</h3>
+                <h3 class="text-indigo-400 font-bold uppercase tracking-widest text-xs mb-4">Princípio Informacional QWAN</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center">
                     <div>
                         <p class="text-slate-400 text-[10px] font-bold mb-2 uppercase">Entropia de Shannon (H)</p>
@@ -418,7 +374,7 @@
 
         <!-- Seção 8: Caso Experimental São Paulo -->
         <section id="applications" class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 uppercase tracking-tight italic">7. Caso Experimental: São Paulo (SP)</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 uppercase tracking-tight italic">Caso Experimental: São Paulo (SP)</h2>
             <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl mb-12">
                 <div class="p-8">
                     <div class="mb-10 rounded-xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900">
@@ -455,7 +411,7 @@
 
         <!-- Seção 9: Framework MetastableX -->
         <section id="metastablex" class="mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">8. Framework MetastableX</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 italic">Framework MetastableX</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <div class="p-6 border border-slate-200 rounded-xl bg-slate-50">
                     <h4 class="font-bold text-indigo-600 mb-4 uppercase text-xs tracking-widest">Sensores de Complexidade</h4>
