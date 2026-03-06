@@ -354,26 +354,63 @@
         </section>
 
         <!-- 5 Pseudocódigo -->
+        <!-- 4 Pseudocódigo (O CORAÇÃO DO MOTOR) -->
         <section id="pseudocode" class="mb-20">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-6 italic text-left">3. Algoritmo Fundamental: Pseudocódigo QWAN</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-6 italic text-left">4. Algoritmo Fundamental</h2>
+            
             <div class="pseudocode-container shadow-2xl">
-                <div class="mb-4 text-emerald-400 border-b border-slate-700 pb-2 font-bold uppercase tracking-widest text-xs">Algorithm: QWAN_Metastable_Engine</div>
+                <div class="pseudocode-header">ALGORITHM: QWAN Fundamental Field Dynamics</div>
                 
-                <span class="pseudocode-keyword">INPUT:</span> &gamma;, &alpha;, &beta;, L, D, E(t)<br><br>
+                <span class="pseudocode-keyword">INPUT:</span><br>
+                &nbsp;&nbsp;N &larr; grid size, T &larr; simulation steps, &Delta;t &larr; time step<br>
+                &nbsp;&nbsp;&alpha;, &beta;, &gamma; &larr; structural parameters, L &larr; Onsager coefficient<br>
+                &nbsp;&nbsp;D &larr; diffusion coefficient, k_env &larr; coupling, &sigma; &larr; smoothing scale<br><br>
 
-                <span class="pseudocode-keyword">WHILE</span> System_Running:<br>
-                &nbsp;&nbsp;<span class="text-slate-400">// 1. Cálculo de Campo Estrutural (Ginzburg-Landau)</span><br>
-                &nbsp;&nbsp;Grad_Phi = <span class="pseudocode-math">&gamma;(x - x0) - &alpha;(x - &lt;x&gt;) + &beta;&nabla;&sup2;x</span><br>
-                &nbsp;&nbsp;<br>
-                &nbsp;&nbsp;<span class="text-slate-400">// 2. Dinâmica de Langevin (Dissipação + Ruído)</span><br>
-                &nbsp;&nbsp;x[t+1] = x[t] - L * Grad_Phi * dt + noise(sqrt(2D*dt))<br>
-                &nbsp;&nbsp;<br>
-                &nbsp;&nbsp;<span class="text-slate-400">// 3. Monitor de Criticidade</span><br>
-                &nbsp;&nbsp;Lyapunov_Exp = log|dx[t+1]/dx[t]|<br>
-                &nbsp;&nbsp;Variance = E[x&sup2;] - (E[x])&sup2;<br>
-                &nbsp;&nbsp;<br>
-                &nbsp;&nbsp;<span class="pseudocode-keyword">IF</span> (Lyapunov_Exp &approx; 0 AND Variance &uarr;):<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="pseudocode-math">Signal("CRITICAL_TIPPING_POINT_DETECTED")</span><br>
+                <span class="pseudocode-header">1. INITIALIZATION</span>
+                <div class="pseudocode-indent">
+                    Create grid x[N,N] with random values in [0.4 , 0.6]<br>
+                    Create environment field E[N,N] and circular structures<br>
+                    Initialize history arrays for [&Phi;, G, H, I, A]
+                </div><br>
+
+                <span class="pseudocode-header">2. MAIN DYNAMICAL LOOP</span>
+                <span class="pseudocode-keyword">FOR</span> t = 1 &rarr; T:<br>
+                <div class="pseudocode-indent">
+                    <span class="pseudocode-comment">// 2.1 COMPUTE LOCAL FREE ENERGY</span><br>
+                    G_field = 0.5 * (x - x0)&sup2;<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.2 COARSE GRAINING (LOCAL MEAN)</span><br>
+                    x_mean = GaussianFilter(x, &sigma;)<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.3 CONFIGURATIONAL FREEDOM</span><br>
+                    H_field = (x - x_mean)&sup2;<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.4 STRUCTURAL COHERENCE</span><br>
+                    dx, dy = SpatialGradients(x)<br>
+                    I_field = dx&sup2; + dy&sup2;<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.5 STRUCTURAL FUNCTIONAL</span><br>
+                    &Phi;_field = &gamma;*G_field - &alpha;*H_field + &beta;*I_field<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.6 FUNCTIONAL GRADIENT & FORCE</span><br>
+                    d&Phi;x, d&Phi;y = Gradient(&Phi;_field)<br>
+                    F_struct = - (d&Phi;x + d&Phi;y)<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.7 FORCING & DIFFUSION</span><br>
+                    F_env = k_env * (E - x)<br>
+                    diffusion = D * Laplacian(x)<br><br>
+                    
+                    <span class="pseudocode-comment">// 2.8 ONSAGER UPDATE</span><br>
+                    x = x + &Delta;t * (L * F_struct + F_env + diffusion)<br>
+                    x = Clamp(x, 0, 1)
+                </div><br>
+
+                <span class="pseudocode-header">3. REGIME CLASSIFICATION</span>
+                <div class="pseudocode-indent">
+                    <span class="pseudocode-keyword">IF</span> &alpha; &gt;&gt; &beta;: <span class="pseudocode-math">"Chaotic"</span><br>
+                    <span class="pseudocode-keyword">IF</span> &beta; &gt;&gt; &alpha;: <span class="pseudocode-math">"Rigid"</span><br>
+                    <span class="pseudocode-keyword">IF</span> &alpha; &approx; &beta;: <span class="pseudocode-math">"Meta-stable Structured (QWAN)"</span>
+                </div>
             </div>
         </section>
 
