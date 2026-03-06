@@ -288,6 +288,97 @@
             </div>
         </section>
 
+<!-- NOVO: Seção de Evidências Experimentais (GALERIA) -->
+        <section id="evidence" class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 italic text-left">2. Fenomenologia Experimental: Galeria QWAN</h2>
+            <p class="serif text-lg mb-10">As visualizações abaixo representam a decomposição do campo biofísico QWAN em suas componentes fundamentais, extraídas de simulações de alta fidelidade.</p>
+
+            <div class="space-y-16">
+                
+                <!-- Imagem 1: Phi Map -->
+                <div class="evidence-card shadow-lg">
+                    <img src="https://github.com/goldenluke/qwan/blob/main/phi_map.png?raw=true" alt="Mapa do Funcional Phi" class="evidence-img">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Mapeamento do Funcional estrutural \(\Phi\)</h4>
+                        <p class="text-slate-600 serif text-lg leading-relaxed">
+                            O <strong>Mapa \(\Phi\)</strong> visualiza a densidade de energia estrutural no espaço bidimensional. Regiões de azul profundo representam vales de estabilidade onde o funcional atinge mínimos locais (\(\delta \Phi / \delta x \to 0\)). Na teoria QWAN, essas "ilhas de ordem" são núcleos de coerência onde a ancoragem (\(\gamma\)) e a coerência (\(\beta\)) neutralizam o ruído entrópico, criando a base para a Qualidade Sem Nome.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Imagem 2: Field at Tc -->
+                <div class="evidence-card shadow-lg">
+                    <img src="https://github.com/goldenluke/qwan/blob/main/field_at_Tc.png?raw=true" alt="Campo no Limiar Crítico" class="evidence-img">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Configuração do Campo no Limiar Crítico (\(T_c\))</h4>
+                        <p class="text-slate-600 serif text-lg leading-relaxed">
+                            Esta visualização captura o parâmetro de ordem \(x\) exatamente na temperatura crítica de transição de fase. Observa-se a emergência de <strong>clusters auto-similares (fractais)</strong> de todas as escalas. Matematicamente, isto corresponde ao ponto onde o expoente de Lyapunov \(\lambda\) beira o zero, permitindo que o sistema processe informação global sem perder a identidade local — a definição física da adaptabilidade adaptativa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Imagem 3: Gradient Map -->
+                <div class="evidence-card shadow-lg">
+                    <img src="https://github.com/goldenluke/qwan/blob/main/gradient_map.png?raw=true" alt="Mapa de Gradientes" class="evidence-img">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Geometria da Tensão: Mapa de Gradientes \(|\nabla x|^2\)</h4>
+                        <p class="text-slate-600 serif text-lg leading-relaxed">
+                            O <strong>Mapa de Gradientes</strong> isola a componente \(I_s(x)\) do funcional. Ele destaca as interfaces de transição entre diferentes domínios estruturais. Áreas de alto gradiente (quentes) indicam zonas de "tensão criativa" onde a estrutura está em fluxo. Sistemas saudáveis mantêm uma distribuição equilibrada de gradientes, evitando a monotonia da ordem rígida (gradiente zero) e a fragmentação do caos (gradientes divergentes).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Imagem 4: Variance Map -->
+                <div class="evidence-card shadow-lg">
+                    <img src="https://github.com/goldenluke/qwan/blob/main/variance_map.png?raw=true" alt="Mapa de Variância" class="evidence-img">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Mapa de Variância: Assinatura de Flickering</h4>
+                        <p class="text-slate-600 serif text-lg leading-relaxed">
+                            O <strong>Mapa de Variância</strong> revela as flutuações temporais locais (\(Var(x_t)\)). Na iminência de um <em>Tipping Point</em>, o sistema exibe o fenômeno de <strong>flickering</strong>: oscilações violentas entre dois estados metaestáveis. Esta imagem é o sensor mestre de Early Warning: onde a variância se torna heterogênea e intensa, a barreira de energia \(\Delta U\) está prestes a colapsar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Imagem 5: Critical Transition -->
+                <div class="evidence-card shadow-lg">
+                    <img src="https://github.com/goldenluke/qwan/blob/main/critical_transition.png?raw=true" alt="Transição Crítica" class="evidence-img">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Dinâmica do Tipping Point: Transição Crítica</h4>
+                        <p class="text-slate-600 serif text-lg leading-relaxed">
+                            Este gráfico demonstra a trajetória de colapso de um sistema real. À medida que o parâmetro de controle \(\theta\) atinge um valor crítico, o sistema sofre um <strong>salto catastrófico</strong> para um novo estado. A imagem prova que a perda de QWAN não é gradual, mas uma quebra de simetria abrupta precedida pela perda de <strong>Lentidão Crítica (CSD)</strong>, validando o uso de ferramentas como o <strong>MetastableX</strong> para previsão de crises em saúde e finanças.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5 Pseudocódigo -->
+        <section id="pseudocode" class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-emerald-500 pl-6 italic text-left">3. Algoritmo Fundamental: Pseudocódigo QWAN</h2>
+            <div class="pseudocode-container shadow-2xl">
+                <div class="mb-4 text-emerald-400 border-b border-slate-700 pb-2 font-bold uppercase tracking-widest text-xs">Algorithm: QWAN_Metastable_Engine</div>
+                
+                <span class="pseudocode-keyword">INPUT:</span> &gamma;, &alpha;, &beta;, L, D, E(t)<br><br>
+
+                <span class="pseudocode-keyword">WHILE</span> System_Running:<br>
+                &nbsp;&nbsp;<span class="text-slate-400">// 1. Cálculo de Campo Estrutural (Ginzburg-Landau)</span><br>
+                &nbsp;&nbsp;Grad_Phi = <span class="pseudocode-math">&gamma;(x - x0) - &alpha;(x - &lt;x&gt;) + &beta;&nabla;&sup2;x</span><br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;<span class="text-slate-400">// 2. Dinâmica de Langevin (Dissipação + Ruído)</span><br>
+                &nbsp;&nbsp;x[t+1] = x[t] - L * Grad_Phi * dt + noise(sqrt(2D*dt))<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;<span class="text-slate-400">// 3. Monitor de Criticidade</span><br>
+                &nbsp;&nbsp;Lyapunov_Exp = log|dx[t+1]/dx[t]|<br>
+                &nbsp;&nbsp;Variance = E[x&sup2;] - (E[x])&sup2;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;<span class="pseudocode-keyword">IF</span> (Lyapunov_Exp &approx; 0 AND Variance &uarr;):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="pseudocode-math">Signal("CRITICAL_TIPPING_POINT_DETECTED")</span><br>
+            </div>
+        </section>
+
+        
+
         <!-- Seção 8: Caso Experimental São Paulo -->
         <section id="applications" class="mb-16">
             <h2 class="text-3xl font-bold text-slate-900 mb-8 border-l-4 border-indigo-600 pl-6 uppercase tracking-tight italic">7. Caso Experimental: São Paulo (SP)</h2>
